@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="xbjlib-1.1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.digi.xbee/xbjlib/1.1.0/ac756754604942363e863e9a76f9eff788f30202/xbjlib-1.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.digi.xbee/xbjlib/1.1.0/2fd0692bb8d874f11f2ef285bf6f2cf42e22dd8b/xbjlib-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

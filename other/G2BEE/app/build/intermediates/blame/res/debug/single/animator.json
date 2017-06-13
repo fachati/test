@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/animator/avatar_rotation_in.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/animator/avatar_rotation_in.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/animator/avatar_rotation_out.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/animator/avatar_rotation_out.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/animator/avatar_rotation_in.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/animator/avatar_rotation_in.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/animator/avatar_rotation_out.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/animator/avatar_rotation_out.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/animator/ic_selected_zoom.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/animator/ic_selected_zoom.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/animator/ic_selected_zoom.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/animator/ic_selected_zoom.xml"
+    }
+]

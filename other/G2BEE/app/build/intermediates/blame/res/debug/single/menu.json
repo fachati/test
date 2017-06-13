@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/menu/menu_g2bee.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/menu/menu_g2bee.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/menu/menu_g2bee.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/menu/menu_g2bee.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/menu/context_menu.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/menu/context_menu.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/menu/drawer_menu.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/menu/drawer_menu.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/menu/context_menu.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/menu/context_menu.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/menu/drawer_menu.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/menu/drawer_menu.xml"
+    }
+]

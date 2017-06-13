@@ -1,0 +1,72 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/menu_group_general"
+           android:checkableBehavior="single">
+
+        <item android:id="@+id/drawer_xbee_nodes"
+              android:checked="true"
+              android:icon="@drawable/ic_xbee_nodes"
+              android:title="@string/drawer_xbee_nodes"/>
+
+        <item android:id="@+id/drawer_messaging"
+              android:icon="@drawable/ic_messaging"
+              android:title="@string/drawer_messaging"/>
+
+    </group>
+
+    <group android:id="@+id/menu_group_radio_configuration"
+           android:checkableBehavior="single">
+
+        <item android:title="@string/drawer_radio_configuration">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item android:id="@+id/drawer_networking"
+                          android:icon="@drawable/ic_networking"
+                          android:title="@string/drawer_networking"/>
+
+                    <item android:id="@+id/drawer_addressing"
+                          android:icon="@drawable/ic_addressing"
+                          android:title="@string/drawer_addressing"/>
+
+                    <item android:id="@+id/drawer_security"
+                          android:icon="@drawable/ic_security"
+                          android:title="@string/drawer_security"/>
+
+                    <item android:id="@+id/drawer_rf_interfacing"
+                          android:icon="@drawable/ic_rf_interfacing"
+                          android:title="@string/drawer_rf_interfacing"/>
+
+                    <item android:id="@+id/drawer_sleep_modes"
+                          android:icon="@drawable/ic_sleep_modes"
+                          android:title="@string/drawer_sleep_modes"/>
+
+                    <item android:id="@+id/drawer_serial_interfacing"
+                          android:icon="@drawable/ic_serial_interfacing"
+                          android:title="@string/drawer_serial_interfacing"/>
+
+                    <item android:id="@+id/drawer_io_settings"
+                          android:icon="@drawable/ic_io_settings"
+                          android:title="@string/drawer_io_settings"/>
+
+                    <item android:id="@+id/drawer_diagnostics"
+                          android:icon="@drawable/ic_diagnostics"
+                          android:title="@string/drawer_diagnostics"/>
+                </group>
+            </menu>
+        </item>
+
+    </group>
+
+    <group android:id="@+id/menu_group_settings"
+           android:checkableBehavior="single">
+
+        <item android:id="@+id/drawer_settings"
+              android:icon="@drawable/ic_settings"
+              android:title="@string/drawer_settings"/>
+
+        <item android:id="@+id/drawer_help_feedback"
+              android:icon="@drawable/ic_help_feedback"
+              android:title="@string/drawer_help_feedback"/>
+
+    </group>
+</menu>

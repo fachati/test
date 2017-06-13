@@ -1,0 +1,9 @@
+<resources>
+
+    <!-- Recycler view -->
+    <dimen name="recycler_view_margin">8dp</dimen>
+
+    <!-- Card -->
+    <dimen name="card_edge_padding_horizontal">8dp</dimen>
+
+</resources>

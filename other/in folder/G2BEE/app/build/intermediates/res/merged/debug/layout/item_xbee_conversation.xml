@@ -1,0 +1,116 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:background="@color/background"
+                android:clickable="false"
+                android:focusable="false">
+
+    <RelativeLayout
+        android:id="@+id/lowerLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/background"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+            <ImageView
+                android:id="@+id/deleteLeft"
+                android:layout_width="@dimen/avatar_diameter"
+                android:layout_height="@dimen/avatar_diameter"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/delete_icon_desc"
+                android:src="@drawable/ic_delete"
+                android:scaleType="center"
+                android:tint="@color/black_54"/>
+
+            <ImageView
+                android:id="@+id/deleteRight"
+                android:layout_width="@dimen/avatar_diameter"
+                android:layout_height="@dimen/avatar_diameter"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="@string/delete_icon_desc"
+                android:src="@drawable/ic_delete"
+                android:scaleType="center"
+                android:tint="@color/black_54"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/background"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/upperLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:background="@color/indigo_500">
+
+        <RelativeLayout
+            android:id="@+id/rippleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/item_padding"
+            android:paddingEnd="@dimen/item_padding"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:id="@+id/avatar_text"
+                android:layout_width="@dimen/avatar_diameter"
+                android:layout_height="@dimen/avatar_diameter"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:background="@drawable/avatar"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_toEndOf="@+id/avatar_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_alignParentTop="true"
+                android:textSize="16sp"
+                android:textColor="@color/black_87"/>
+
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textSize="14sp"
+                android:layout_below="@+id/address"
+                android:layout_alignStart="@+id/address"
+                android:ellipsize="end"
+                android:maxLines="1"/>
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp"
+                android:textSize="14sp"
+                android:layout_below="@+id/message"
+                android:layout_alignStart="@+id/message"/>
+
+        </RelativeLayout>
+    </FrameLayout>
+
+</RelativeLayout>

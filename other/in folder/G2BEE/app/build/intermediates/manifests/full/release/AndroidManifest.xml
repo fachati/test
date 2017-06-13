@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.g2mobility.xbee"
+    android:versionCode="20"
+    android:versionName="3.0.2" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="23" />
+
+    <permission-group
+        android:name="com.g2mobility.permission-group.G2BEE"
+        android:description="@string/permgroupdesc_xbee"
+        android:icon="@drawable/perm_group_xbee"
+        android:label="@string/permgrouplab_g2bee"
+        android:logo="@drawable/perm_group_xbee"
+        android:priority="200" />
+
+    <permission
+        android:name="com.g2mobility.permission.G2BEE"
+        android:description="@string/permdesc_xbee"
+        android:label="@string/permlab_xbee"
+        android:permissionGroup="com.g2mobility.permission-group.G2BEE"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="android.permission.MANAGE_USB" />
+    <uses-permission android:name="com.g2mobility.permission.G2BEE" />
+
+    <application
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.g2mobility.xbee.G2BeeActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustResize|" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.g2mobility.xbee.G2BeeService"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:permission="com.g2mobility.permission.G2BEE" >
+        </service>
+
+        <receiver
+            android:name="com.g2mobility.xbee.G2BeeReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="com.g2mobility.permission.G2BEE" >
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+                <action android:name="android.hardware.usb.action.USB_DEVICE_DETACHED" />
+                <action android:name="com.g2mobility.XBEE_DEBUG_ON" />
+                <action android:name="com.g2mobility.XBEE_DEBUG_OFF" />
+                <action android:name="com.g2mobility.XBEE_DISCOVER" />
+                <action android:name="com.g2mobility.XBEE_EXECUTE_PARAMETER" />
+                <action android:name="com.g2mobility.XBEE_GET_PARAMETER" />
+                <action android:name="com.g2mobility.XBEE_GRANT_PERMISSION" />
+                <action android:name="com.g2mobility.XBEE_LIST_DEVICE" />
+                <action android:name="com.g2mobility.XBEE_SEND_DATA" />
+                <action android:name="com.g2mobility.XBEE_SET_PARAMETER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/usb_device_filter" />
+        </receiver>
+    </application>
+
+</manifest>

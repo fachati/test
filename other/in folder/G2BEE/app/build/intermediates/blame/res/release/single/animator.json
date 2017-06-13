@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/animator/avatar_rotation_in.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/animator/avatar_rotation_in.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/animator/ic_selected_zoom.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/animator/ic_selected_zoom.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/animator/avatar_rotation_out.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/animator/avatar_rotation_out.xml"
+    }
+]

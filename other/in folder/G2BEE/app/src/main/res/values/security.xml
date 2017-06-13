@@ -1,0 +1,40 @@
+<resources>
+
+    <!-- Security -->
+    <string-array name="xbee_security_commands">
+        <item>EE</item>
+        <item>EO</item>
+        <item>KY</item>
+    </string-array>
+
+    <string-array name="xbee_security_command_names">
+        <item>Encryption enable</item>
+        <item>Encryption options</item>
+        <item>Encryption key</item>
+    </string-array>
+
+    <string-array name="xbee_security_descriptions">
+        <item>Default: 0\n\nEnable or disable ZigBee encryption.</item>
+        <item>Range: 0x0 - 0x1 (Default: 0)\n\nSet the ZigBee Encryption
+            options :\nBit0 = Acquire / Transmit network security key unencrypted
+            during joining.
+        </item>
+        <item>0 - 32 hexadecimal characters (Default: \'\')\n\nSets key used for
+            encryption and decryption (ZigBee trust center link key).\nThis register
+            can not be read.
+        </item>
+    </string-array>
+
+    <string-array name="xbee_security_input_types">
+        <item>SPINNER</item>
+        <item>SLIDER</item>
+        <item>ASCII EDIT TEXT</item>
+    </string-array>
+
+    <string-array name="xbee_security_ranges">
+        <item>0 - Disabled,1 - Enabled</item>
+        <item>0,1,0</item>
+        <item></item>
+    </string-array>
+
+</resources>

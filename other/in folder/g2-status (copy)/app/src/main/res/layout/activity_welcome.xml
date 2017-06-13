@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/layoutContent"
+    tools:context="com.g2mobility.status.WelcomeActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/ic_fr"
+                android:scaleType="fitXY"/>
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_en"/>
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_es"/>
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_de"/>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:visibility="gone"
+            android:id="@+id/wrapper_ntb_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/bg_ntb_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center"
+                android:background="#605271"/>
+
+            <com.g2mobility.status.tab.NavigationTabBar
+                android:id="@+id/ntb_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                app:ntb_badge_gravity="bottom"
+                app:ntb_badge_position="left"
+                app:ntb_badge_use_typeface="true"
+                app:ntb_badged="true"
+                app:ntb_title_mode="active"
+                app:ntb_titled="true"
+                app:ntb_typeface="fonts/agency.ttf"/>
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/buttonLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Left"/>
+
+                <TextView
+                    android:id="@+id/textViewStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+                <Button
+                    android:id="@+id/buttonCenter"
+                    android:text="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/buttonRight"
+                    android:text="Right"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:paddingTop="40px"
+                android:visibility="gone"
+                android:id="@+id/layoutPC"
+                android:layout_height="match_parent">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="120px"
+                    android:layout_marginRight="120px"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textColor="#ffffff"
+                    android:background="@drawable/borderbleu"
+                    android:text="Recharge en cours"
+                    android:textStyle="bold"
+                    android:textSize="50dp"
+                    android:id="@+id/textStatus" />
+
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="40px"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="100px">
+
+                    <ImageView
+                        android:visibility="invisible"
+                        android:layout_width="80px"
+                        android:layout_height="40px"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/gauche"
+                        android:id="@+id/imageViewG" />
+
+                    <TextView
+                        android:gravity="top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Point de charge"
+                        android:id="@+id/textBorneDirection"
+                        android:textSize="32dp" />
+
+                    <ImageView
+                        android:layout_width="80px"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="40px"
+                        android:src="@drawable/droite"
+                        android:visibility="invisible"
+                        android:id="@+id/imageViewD" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:background="@null"
+                    android:layout_height="20dp"
+                    android:id="@+id/layoutProgress"
+                    android:visibility="gone">
+                    <WebView
+                        android:id="@+id/webView"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="150px" >
+                    </WebView>
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_marginTop="40px"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="40px"
+                    android:text="Ouvrez la porte et branchez le cable(à fond)\nRefermez la porte\nBranchez votre véhicule"
+                    android:id="@+id/textCommentaire"
+                    android:textSize="32dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="visible"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10px"
+                android:layout_marginRight="10px"
+                android:id="@+id/layoutCenter">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="240px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="40px"
+                        android:layout_marginLeft="80px"
+                        android:layout_marginRight="80px"
+                        android:paddingTop="20px"
+                        android:paddingBottom="20px"
+                        android:textColor="#000000"
+                        android:background="@drawable/borderwhite"
+                        android:text="@string/TEXT_TITLE"
+                        android:textStyle="bold"
+                        android:textSize="36dp"
+                        android:id="@+id/textView" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:textStyle="bold"
+                        android:textSize="24dp"
+                        android:text="Pour commencer ou terminer votre session de recharge\nVeuillez badger du côté correspondant à votre stationnement"
+                        android:gravity="center_horizontal"
+                        android:id="@+id/textView5" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="240px">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_gravity="bottom"
+                        android:layout_width="180px"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:layout_gravity="center_horizontal"
+                            android:textStyle="bold"
+                            android:text="GAUCHE"/>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="115px"
+                            android:layout_marginLeft="10px"
+                            android:layout_marginRight="10px">
+
+                            <ImageView
+                                android:layout_width="90px"
+                                android:layout_height="100px"
+                                android:layout_gravity="bottom"
+                                android:src="@drawable/t2"
+                                android:id="@+id/imageView2" />
+
+                            <ImageView
+                                android:layout_width="70px"
+                                android:layout_height="70px"
+                                android:paddingBottom="8px"
+                                android:src="@drawable/ef"
+                                android:layout_gravity="bottom"
+                                android:id="@+id/imageView3" />
+                        </LinearLayout>
+
+                        <com.g2mobility.status.tab.AutoResizeTextView
+                            android:layout_width="180px"
+                            android:layout_height="70px"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:textColor="#000000"
+                            android:background="@drawable/borderwhite"
+                            android:text="INCONNU"
+
+                            android:textStyle="bold"
+                            android:textSize="42dp"
+                            android:id="@+id/textViewStatusB1" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="160px"
+                        android:layout_height="160px"
+                        android:layout_marginTop="20px"
+                        android:background="@drawable/borderwhite"
+                        android:src="@drawable/cerf"
+                        android:layout_marginRight="130px"
+                        android:layout_marginLeft="130px"
+                        android:id="@+id/imageView" />
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="180px"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:layout_gravity="center_horizontal"
+                            android:textStyle="bold"
+                            android:text="DROITE"
+                            android:id="@+id/textView6" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="115px"
+                            android:layout_marginLeft="10px"
+                            android:layout_marginRight="10px">
+
+                            <ImageView
+                                android:layout_width="90px"
+                                android:layout_height="100px"
+                                android:layout_gravity="bottom"
+                                android:src="@drawable/t2"/>
+
+                            <ImageView
+                                android:layout_width="70px"
+                                android:layout_height="70px"
+                                android:paddingBottom="8px"
+                                android:src="@drawable/ef"
+                                android:layout_gravity="bottom" />
+                        </LinearLayout>
+
+                        <com.g2mobility.status.tab.AutoResizeTextView
+                            android:layout_gravity="bottom"
+                            android:layout_width="180px"
+                            android:layout_height="70px"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:textColor="#000000"
+                            android:background="@drawable/borderwhite"
+                            android:text="INCONNU"
+                            android:textStyle="bold"
+                            android:textSize="42dp"
+                            android:id="@+id/textViewStatusB2" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+</LinearLayout>

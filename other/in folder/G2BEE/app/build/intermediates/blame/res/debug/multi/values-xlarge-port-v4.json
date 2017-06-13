@@ -1,0 +1,88 @@
+[
+    {
+        "outputFile": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/values-xlarge-port-v4/values-xlarge-port-v4.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 58,
+                    "endOffset": 109
+                },
+                "from": {
+                    "file": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/values-xlarge-port/dimens.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 114,
+                        "endColumn": 58,
+                        "endOffset": 168
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 114,
+                    "endColumn": 50,
+                    "endOffset": 160
+                },
+                "from": {
+                    "file": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/values-xlarge-port/dimens.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 44,
+                        "endColumn": 50,
+                        "endOffset": 90
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/values-xlarge-port-v4/values-xlarge-port-v4.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 58,
+                    "endOffset": 109
+                },
+                "from": {
+                    "file": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/values-xlarge-port/dimens.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 114,
+                        "endColumn": 58,
+                        "endOffset": 168
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 114,
+                    "endColumn": 50,
+                    "endOffset": 160
+                },
+                "from": {
+                    "file": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/values-xlarge-port/dimens.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 44,
+                        "endColumn": 50,
+                        "endOffset": 90
+                    }
+                }
+            }
+        ]
+    }
+]

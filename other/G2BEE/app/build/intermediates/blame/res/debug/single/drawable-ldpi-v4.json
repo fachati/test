@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/md_nav_back.png",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/exploded-aar/com.github.afollestad.material-dialogs/core/0.8.5.7/res/drawable-ldpi-v4/md_nav_back.png"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/md_nav_back.png",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.github.afollestad.material-dialogs/core/0.8.5.7/res/drawable-ldpi-v4/md_nav_back.png"
+    }
+]

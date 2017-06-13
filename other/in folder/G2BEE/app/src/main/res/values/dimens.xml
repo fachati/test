@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Recycler view -->
+    <dimen name="recycler_view_offset">8dp</dimen>
+    <dimen name="recycler_view_margin">0dp</dimen>
+
+    <!-- Card -->
+    <dimen name="card_edge_padding_vertical">8dp</dimen>
+    <dimen name="card_edge_padding_horizontal">8dp</dimen>
+    <dimen name="card_elevation_low">2dp</dimen>
+    <dimen name="card_elevation_high">8dp</dimen>
+    <dimen name="card_item_padding">16dp</dimen>
+
+    <!-- Floating action button -->
+    <dimen name="fab_diameter">56dp</dimen>
+    <dimen name="fab_end_margin">16dp</dimen>
+    <dimen name="fab_bottom_margin">16dp</dimen>
+    <dimen name="fab_elevation_low">4dp</dimen>
+    <dimen name="fab_elevation_high">10dp</dimen>
+
+    <!-- List item-->
+    <dimen name="avatar_diameter">40dp</dimen>
+    <dimen name="item_padding">16dp</dimen>
+    <dimen name="dialog_margin">24dp</dimen>
+
+    <!-- Bubble -->
+    <dimen name="bubble_padding">8dp</dimen>
+    <dimen name="bubble_margin">58dp</dimen>
+
+    <!-- Messaging -->
+    <dimen name="forward_button_diameter">48dp</dimen>
+
+</resources>

@@ -1,0 +1,7 @@
+com.g2mobility.xbee
+com.g2mobility.xbee.data
+com.g2mobility.xbee.dialog
+com.g2mobility.xbee.fragment
+com.g2mobility.xbee.recycler
+com.g2mobility.xbee.serial
+org.slf4j

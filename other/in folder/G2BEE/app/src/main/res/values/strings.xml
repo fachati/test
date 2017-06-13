@@ -1,0 +1,111 @@
+<resources>
+
+    <string name="app_name">G²Bee</string>
+
+    <!-- Permission group -->
+    <string name="permgroupdesc_xbee">XBee</string>
+    <string name="permgrouplab_g2bee">XBee</string>
+    <string name="permlab_xbee">use XBee radio module</string>
+    <string name="permdesc_xbee">Allows the app to use XBee radio module for ZigBee communication.
+    </string>
+
+    <!-- Drawer animateToggleToBackArrow -->
+    <string name="open">Open drawer</string>
+    <string name="close">Close drawer</string>
+
+    <!-- Drawer items -->
+    <string name="drawer_xbee_nodes">XBee nodes</string>
+    <string name="drawer_messaging">Messaging</string>
+    <string name="drawer_radio_configuration">Radio configuration</string>
+    <string name="drawer_networking">Networking</string>
+    <string name="drawer_addressing">Addressing</string>
+    <string name="drawer_security">Security</string>
+    <string name="drawer_rf_interfacing">RF interfacing</string>
+    <string name="drawer_sleep_modes">Sleep modes</string>
+    <string name="drawer_serial_interfacing">Serial interfacing</string>
+    <string name="drawer_io_settings">I/O settings</string>
+    <string name="drawer_diagnostics">Diagnostics</string>
+    <string name="drawer_settings">Settings</string>
+    <string name="drawer_help_feedback">Help &amp; feedback</string>
+
+    <!-- Fab -->
+    <string name="action_node_discover">Node discover</string>
+
+    <!-- Menu -->
+    <string name="action_read_radio_configurations">Read</string>
+    <string name="action_software_reset">Software reset</string>
+    <string name="action_restore_defaults">Restore defaults</string>
+    <string name="action_copy">Copy</string>
+    <string name="action_delete">Delete</string>
+
+    <!-- Save instance state-->
+    <string name="key_checked_item">checkedItem</string>
+    <string name="key_radio_conf">radioConf</string>
+    <string name="key_xbee_selection">xbeeSelection</string>
+    <string name="key_xbee_type">xbeeType</string>
+    <string name="key_xbee_address">xbeeAddress</string>
+    <string name="key_node_identifier">nodeIdentifier</string>
+
+    <!-- Node types -->
+    <string name="node_type_coordinator">Coordinator</string>
+    <string name="node_type_router">Router</string>
+    <string name="node_type_end_device">End device</string>
+    <string name="node_type_unknown">Unknown device</string>
+
+    <!-- Message -->
+    <string name="message_time_format">%1$s %2$s</string>
+
+    <!-- Address -->
+    <string name="node_address_unknown">Unknown address</string>
+    <string name="node_address_local">Local</string>
+
+    <!-- Discovery -->
+    <string name="discovering">Discovering XBee nodes…</string>
+    <string name="cannot_discover">XBee node is not ready for discovery.</string>
+    <string name="button_cancel">Cancel</string>
+
+    <!-- Radio configuration-->
+    <string name="unknown_value">Unknown</string>
+    <string name="value_label">Value</string>
+    <string name="command_description">Current value : %1$s</string>
+    <string name="button_ok">OK</string>
+    <string name="button_write">Write</string>
+    <string name="input_invalid">Input value is invalid</string>
+
+    <!-- Read radio configurations -->
+    <string name="reading">Read XBee radio configuration…</string>
+    <string name="cannot_read">Failed to load XBee radio configuration.</string>
+
+    <!-- Software reset -->
+    <string name="software_reset_confirm">Software reset the selected XBee ?</string>
+    <string name="button_reset">Reset</string>
+    <string name="software_resetting">Software resetting…</string>
+    <string name="software_reset_success">Software reset success.</string>
+    <string name="software_reset_failed">Software reset failed.</string>
+
+    <!-- Restore defaults -->
+    <string name="restore_defaults_confirm">Restore selected XBee to factory
+        defaults ?\nThis cannot be undone.
+    </string>
+    <string name="button_restore">Restore</string>
+    <string name="restoring_defaults">Restoring to factory defaults…</string>
+    <string name="restore_defaults_success">Restore defaults success.</string>
+    <string name="restore_defaults_failed">Restore defaults failed.</string>
+
+    <!-- Messaging -->
+    <string name="send_to">Send to…</string>
+    <string name="label_ascii">ASCII</string>
+    <string name="label_ascii_off">Off</string>
+    <string name="label_ascii_on">On</string>
+    <string name="hint_hex">Send message (hexadecimal)</string>
+    <string name="hint_ascii">Send message (ASCII)</string>
+    <string name="title_xbee_message">XBee message</string>
+
+    <!-- Content description -->
+    <string name="avatar_image_desc">Avatar</string>
+    <string name="configuration_label_desc">Configuration icon</string>
+    <string name="button_send_desc">Send button</string>
+    <string name="delete_icon_desc">Delete icon</string>
+    <string name="button_forward_desc">Forward button</string>
+
+</resources>

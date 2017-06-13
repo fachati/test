@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/xml/usb_device_filter.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/xml/usb_device_filter.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/xml/settings.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/xml/settings.xml"
+    }
+]

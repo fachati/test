@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">g2-status</string>
+
+    <string name="text_test_log_PING_IDLE">IDLE</string>
+    <string name="text_test_log_PING_CONN">EVCONNECTED</string>
+    <string name="text_test_log_PING_CHARGING">CHARGING</string>
+    <string name="text_test_log_PING_PRECHARGING">PRECHARGING</string>
+    <string name="text_test_log_PING_EVNOTCONN">EVNOTCONNECTED</string>
+    <string name="text_test_log_PING_PREPARING">PREPARING</string>
+    <string name="text_test_log_PING_FINISHING">FINISHING</string>
+    <string name="text_test_log_PING_MAINTENANCE">OFF</string>
+    <string name="text_test_log_PING_ERROR">FAIL</string>
+
+    <string name="text_test_log_PING_FAIL">FAIL</string>
+    <string name="text_test_log_PING_OFF">OFF</string>
+
+
+    <string name="text_html_FAIL">Borne hors service</string>
+    <string name="text_html_OFF">Borne en maintenance</string>
+
+    <string name="text_html_IDLE_FALSE">Borne libre</string>
+    <string name="text_html_ENC_FALSE">non prévu EV NOT CONNECTED wo SESSION</string>
+    <string name="text_html_EC_FALSE">non prévu EV CONNECTED wo SESSION</string>
+    <string name="text_html_PRECHARGING_FALSE">non prévu PRECHARGING wo SESSION</string>
+    <string name="text_html_CHARGING_FALSE">non prévu CHARGING wo SESSION</string>
+    <string name="text_html_FINISHING_FALSE">Session de charge terminée</string>
+
+    <string name="text_html_IDLE_TRUE">non prévu IDLE W SESSION</string>
+    <string name="text_test_PREPARING_TRUE">Utilisateur autorisé</string>
+    <string name="text_html_ENC_TRUE">Utilisateur autorisé</string>
+    <string name="text_html_EC_TRUE">En attente de demande de charge du véhicule</string>
+    <string name="text_html_PRECHARGING_TRUE">Charge en cours</string>
+    <string name="text_html_FINISHING_TRUE">non prévu FINISHING W SESSION</string>
+
+
+    <string name="text_html_FAIL2">Borne hors service</string>
+    <string name="text_html_OFF2">Borne en maintenance</string>
+
+    <string name="text_html_IDLE_FALSE2">Veuillez badger pour vous recharger</string>
+    <string name="text_html_ENC_FALSE2">non prévu EV NOT CONNECTED wo SESSION</string>
+    <string name="text_html_EC_FALSE2">non prévu EV CONNECTED wo SESSION</string>
+    <string name="text_html_PRECHARGING_FALSE2">on prévu PRECHARGING wo SESSION</string>
+    <string name="text_html_CHARGING_FALSE2">non prévu CHARGING wo SESSION</string>
+    <string name="text_html_FINISHING_FALSE2">Veuillez débrancher et fermer la porte</string>
+
+    <string name="text_html_IDLE_TRUE2">non prévu IDLE W SESSION</string>
+    <string name="text_test_PREPARING_TRUE2">Veuillez ouvrir la porte et brancher</string>
+    <string name="text_html_ENC_TRUE2">Veuillez brancher le véhicule</string>
+    <string name="text_html_EC_TRUE2">Veuillez badger pour terminer la session</string>
+    <string name="text_html_PRECHARGING_TRUE2">Veuillez badger pour terminer la session</string>
+    <string name="text_html_FINISHING_TRUE2">non prévu FINISHING W SESSION</string>
+
+
+    <string name="text_info_Debranche">Veuillez débrancher et fermer la porte</string>
+    <string name="text_info_Branche">Veuillez brancher et fermer la porte</string>
+
+    <string name="text_info_Autorisation">Autorisation on cours\n</string>
+
+</resources>

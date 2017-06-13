@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottomBarItemOne"
+        android:icon="@mipmap/ic_calib_no"
+        android:title="Recents" />
+
+    <item
+        android:id="@+id/bottomBarItemtwo"
+        android:icon="@mipmap/ic_conf_no"
+        android:title="Recents2" />
+
+    <item
+        android:id="@+id/bottomBarItemtr"
+        android:icon="@mipmap/ic_f_no"
+        android:title="Recents3" />
+</menu>

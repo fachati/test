@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/menu/menu_g2bee.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/menu/menu_g2bee.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/menu/context_menu.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/menu/context_menu.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/menu/drawer_menu.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/menu/drawer_menu.xml"
+    }
+]

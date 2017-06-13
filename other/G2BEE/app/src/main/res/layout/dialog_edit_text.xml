@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <TextView android:id="@+id/content"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="16dp"
+              android:textSize="16sp"/>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/edit_text_value"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:inputType="text"
+        android:textSize="16sp"
+        android:textColor="@color/black_87"
+        android:hint="@string/value_label"
+        app:met_floatingLabel="highlight"
+        app:met_primaryColor="@color/blue_500"/>
+
+</LinearLayout>

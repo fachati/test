@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/xml/settings.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/xml/settings.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/xml/usb_device_filter.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/xml/usb_device_filter.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/xml/settings.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/xml/settings.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/xml/usb_device_filter.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/xml/usb_device_filter.xml"
+    }
+]

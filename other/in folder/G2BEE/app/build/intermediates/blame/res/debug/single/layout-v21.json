@@ -1,0 +1,58 @@
+[
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/layout-v21/fragment_xbee_nodes.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/layout-v21/fragment_xbee_nodes.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/layout-v21/activity_g2bee.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/layout-v21/activity_g2bee.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/layout-v21/item_xbee_message.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/layout-v21/item_xbee_message.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/layout-v21/card_xbee_node.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/layout-v21/card_xbee_node.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/layout-v21/card_xbee_node.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/layout-v21/card_xbee_node.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/layout-v21/fragment_messaging.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/layout-v21/fragment_messaging.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/layout-v21/fragment_xbee_message.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/layout-v21/fragment_xbee_message.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/layout-v21/fragment_xbee_nodes.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/layout-v21/fragment_xbee_nodes.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/layout-v21/fragment_messaging.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/layout-v21/fragment_messaging.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/layout-v21/item_xbee_conversation.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/layout-v21/item_xbee_conversation.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/layout-v21/item_xbee_message.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/layout-v21/item_xbee_message.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/layout-v21/fragment_xbee_message.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/layout-v21/fragment_xbee_message.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/layout-v21/item_xbee_conversation.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/layout-v21/item_xbee_conversation.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/layout-v21/activity_g2bee.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/layout-v21/activity_g2bee.xml"
+    }
+]

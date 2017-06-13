@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:key="usb_device"
+        android:title="@string/title_usb_device"
+        android:defaultValue=""/>
+
+    <PreferenceCategory android:title="@string/title_serial_settings">
+        <ListPreference
+            android:key="baud_rate"
+            android:title="@string/title_baud_rate"
+            android:defaultValue="@string/default_baud_rate"
+            android:entries="@array/baud_rate_entries"
+            android:entryValues="@array/baud_rate_entry_values"/>
+        <ListPreference
+            android:key="data_bits"
+            android:title="@string/title_data_bits"
+            android:defaultValue="@string/default_data_bits"
+            android:entries="@array/data_bits_entries"
+            android:entryValues="@array/data_bits_entry_values"/>
+        <ListPreference
+            android:key="stop_bits"
+            android:title="@string/title_stop_bits"
+            android:defaultValue="@string/default_stop_bits"
+            android:entries="@array/stop_bits_entries"
+            android:entryValues="@array/stop_bits_entry_values"/>
+        <ListPreference
+            android:key="parity"
+            android:title="@string/title_parity"
+            android:defaultValue="@string/default_parity"
+            android:entries="@array/parity_entries"
+            android:entryValues="@array/parity_entry_values"/>
+    </PreferenceCategory>
+</PreferenceScreen>

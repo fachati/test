@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2016 Phil Shadlyn
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+
+
+    <string name="TEXT_TITLE">\t\tBadger-Brancher-Recharger !\t\t </string>
+    <string name="TEXT_INSTRUCTION">Pour commencer ou terminer votre session de recharge\nVeuillez badger du côté correspondant à votre stationnement</string>
+    <string name="TEXT_LEFT">GAUCHE</string>
+    <string name="TEXT_RIGHT">DROITE</string>
+
+    <string name="STATUS_LIBRE">LIBRE</string>
+    <string name="STATUS_OCCUPE">OCCUPE</string>
+    <string name="STATUS_PANNE">EN PANNE</string>
+    <string name="STATUS_HORS_SERVICE">HORS SERVICE</string>
+    <string name="STATUS_UNKNOWN">INCONNU</string>
+
+    <string name="TEXT_POISITION_LEFT">Point de charge gauche</string>
+    <string name="TEXT_POISITION_RIGHT">Point de charge droite</string>
+
+    <string name="UNDEF_T1">Erreur interne</string>
+    <string name="ADMIN_MODE_T1">Mode administrateur</string>
+    <string name="ADMIN_CMD_ACK_T1">Mode administrateur</string>
+    <string name="OFFLINE_MODE_T1">Borne en maintenance</string>
+    <string name="CALIBRATING_MODE_T1">... Calibration en cours ...</string>
+    <string name="CALIBRATION_ERROR_T1">Erreur de calibration</string>
+    <string name="ERROR_LINE_FAIL_T1">Borne hors service</string>
+    <string name="ERROR_SWITCH_FAILURE_T1">Borne hors service</string>
+    <string name="ERROR_HDW_T1">Borne hors service</string>
+    <string name="ERROR_EEPROM_T1">Borne hors service</string>
+    <string name="ERROR_NEUTRAL_T1">Borne hors service</string>
+    <string name="ERROR_MODE3_T1">Erreur avec le véhicule</string>
+    <string name="ERROR_OVERCURR_T1">Erreur avec le véhicule</string>
+    <string name="BLINK_CMD_T1">UUID : xxxxxxxxxxxx</string>
+    <string name="RESERVED_T1">... Borne réservée ... </string>
+    <string name="IDLE_T1">Bienvenue</string>
+    <string name="USER_LI_TAG_T1">... Vérification en cours ...</string>
+    <string name="USER_LI_VALIDATION_WAIT_T1">... Vérification en cours ...</string>
+    <string name="USER_LI_SUCCESS_T1">Accès autorisé</string>
+    <string name="USER_LI_FAILURE_T1">Accès refusé</string>
+    <string name="PREP_NOT_CONN_T1">Borne déverrouillée</string>
+    <string name="PREP_NOT_CONN_DOOR_O_T1">Borne déverrouillée</string>
+    <string name="PREP_CONN_DOOR_O_T1">Session démarrée</string>
+    <string name="PREP_CONN_T1">... Recharge en cours ...</string>
+    <string name="SESSION_NOT_CONN_T1">session démarrée</string>
+    <string name="SESSION_EV_SUSPENDED_T1">... Recharge en cours ...</string>
+    <string name="SESSION_CHARGING_EV_T1">... Recharge en cours ...</string>
+    <string name="SESSION_CHARGING_AUX_T1">... Recharge en cours ...</string>
+    <string name="SESSION_EVSE_SUSPENDED_T1">... Recharge en cours ...</string>
+    <string name="SESSION_EV_WAKEUP_T1">... Recharge en cours ...</string>
+
+    <string name="SESSION_WAIT_EV_STOP_CHARGE_T1">Arrêt en cours</string>
+    <string name="USER_LO_TAG_T1">... Vérification en cours ...</string>
+    <string name="USER_LO_VALIDATION_WAIT">... Vérification en cours ...</string>
+    <string name="USER_LO_SUCCESS_T1">Accès autorisé</string>
+    <string name="USER_LO_FAILURE_T1">Accès refusé</string>
+    <string name="FINISH_PLUG_IN_T1">Session terminée</string>
+    <string name="FINISH_DOOR_O">Session terminée</string>
+
+
+
+    <string name="UNDEF_T2">... Veuillez contacter le support technique ...</string>
+    <string name="ADMIN_MODE_T2">Badgez avec la nouvelle configuration</string>
+    <string name="ADMIN_CMD_ACK_T2">Configuration acceptée</string>
+    <string name="OFFLINE_MODE_T2"></string>
+    <string name="CALIBRATING_MODE_T2">... Veuillez patienter ...</string>
+    <string name="CALIBRATION_ERROR_T2">Veuillez recommencer</string>
+    <string name="ERROR_LINE_FAIL_T2">... Veuillez contacter le support technique ...</string>
+    <string name="ERROR_SWITCH_FAILURE_T2">... Veuillez contacter le support technique ...</string>
+    <string name="ERROR_HDW_T2">... Veuillez contacter le support technique ...</string>
+    <string name="ERROR_EEPROM_T2">... Veuillez contacter le support technique ...</string>
+
+    <string name="ERROR_NEUTRAL_T2">... Veuillez contacter le support technique ...</string>
+    <string name="ERROR_MODE3_T2">... Vérifiez le branchement et la consommation du véhicule ...</string>
+    <string name="ERROR_OVERCURR_T2">... Vérifiez le branchement et la consommation du véhicule ...</string>
+    <string name="BLINK_CMD_T2">Param 1, 2, 3, 4</string>
+    <string name="RESERVED_T2">Badgez pour ouvrir ... </string>
+    <string name="IDLE_T2">Badgez pour ouvrir ... </string>
+    <string name="USER_LI_TAG_T2">... Veuillez patienter ...</string>
+    <string name="USER_LI_VALIDATION_WAIT_T2">... Veuillez patienter ..</string>
+    <string name="USER_LI_SUCCESS_T2">... Ouvrez la porte et branchez ...</string>
+    <string name="USER_LI_FAILURE_T2"></string>
+
+    <string name="PREP_NOT_CONN_T2">... Ouvrez la porte et branchez ...</string>
+    <string name="PREP_NOT_CONN_DOOR_O_T2">... Branchez ...</string>
+    <string name="PREP_CONN_DOOR_O_T2">... Branchez le véhicule et fermez la porte ...</string>
+    <string name="PREP_CONN_T2">Badgez pour arrêter</string>
+    <string name="SESSION_NOT_CONN_T2">... Branchez le véhicule ...</string>
+    <string name="SESSION_EV_SUSPENDED_T2">Badgez pour arrêter</string>
+    <string name="SESSION_CHARGING_EV_T2">Badgez pour arrêter</string>
+    <string name="SESSION_CHARGING_AUX_T2">Badgez pour arrêter</string>
+    <string name="SESSION_EVSE_SUSPENDED_T2">Badgez pour arrêter</string>
+    <string name="SESSION_EV_WAKEUP_T2">Badgez pour arrêter</string>
+
+    <string name="SESSION_WAIT_EV_STOP_CHARGE_T2">... Veuillez patienter ...</string>
+    <string name="USER_LO_TAG_T2">... Veuillez patienter ...</string>
+    <string name="USER_LO_VALIDATION_WAIT_T2">... Veuillez patienter ...</string>
+    <string name="USER_LO_SUCCESS_T2">... Ouvrez la porte et débranchez ...</string>
+    <string name="USER_LO_FAILURE_T2"></string>
+    <string name="FINISH_PLUG_IN_T2">... Veuillez débrancher et fermer la porte ...</string>
+    <string name="FINISH_DOOR_O_T2">... Veuillez fermer la porte ...</string>
+
+
+    <string name="TEXT_STATUS_RECHARGE">Recharge en cours</string>
+    <string name="TEXT_STATUS_SESSION">Session en cours</string>
+    <string name="TEXT_STATUS_ERROR">Erreur</string>
+    <string name="TEXT_STATUS_WARNING">Alerte</string>
+    <string name="TEXT_STATUS_RESERVED">Réservé</string>
+    <string name="TEXT_STATUS_Indefini">Indéfini</string>
+    <string name="TEXT_STATUS_FREE">        Libre        </string>
+    <string name="TEXT_STATUS_AUTHENTIFICATION">Authentification</string>
+    <string name="TEXT_STATUS_INFIRMATION">Infirmation</string>
+
+
+</resources>

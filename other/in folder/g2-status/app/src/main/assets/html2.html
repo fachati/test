@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+            <script type="text/javascript">
+                   function updateInformation(L1,L2,L3){
+                        document.getElementById('ligne1').innerHTML = L1;
+                        document.getElementById('ligne2').innerHTML = L2;
+                        document.getElementById('ligne3').innerHTML = L3;
+                        var ele = document.getElementById("progress");
+                        if(L3.indexOf("Autorisation")>= 0) {
+                            ele.style.display = "block";
+                        }else {
+                            ele.style.display = "none";
+                        }
+                  }
+
+                  function setBorneName(borneName){
+                        document.getElementById('borneName').innerHTML = borneName;
+
+                  }
+            </script>
+    </head>
+
+    <body bgcolor="#76afcf">
+        <table width="100%" height="100%">
+            <tr>
+                <td align="center" valign="center">
+                    <font size="6pt" color="white"><U><B><label id="borneName">Borne Name</label></B></U></font><br/><br/><br/>
+                    <font size="4pt" color="#605271"><B><label id="ligne1">ligne1</label></B></font><br/>
+                    <font size="4pt" color="#605271"><B><label id="ligne2">ligne2</label></B></font><br/><br/><br/><br/>
+                    <font color="white"><label id="ligne3">ligne3</label></font><br/>
+                    <div id="progress" style="display: none"><img src="dw.gif"></div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

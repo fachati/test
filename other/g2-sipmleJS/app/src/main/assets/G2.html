@@ -1,0 +1,1099 @@
+<html>
+
+<STYLE type="text/css">
+select{
+  width : 200px;
+}
+</STYLE>
+
+
+	
+  <script type="text/javascript">
+
+// ADDR : document.getElementById('f_custom_addr').value;
+// FRAME : document.getElementById('xbee_frame').value
+// fn : sendSerial a reecrire
+//
+
+var message='message';
+  
+	document.addEventListener("keydown", keyDownTextField, false);
+
+		function keyDownTextField(e) {
+		var keyCode = e.keyCode;
+		  if(keyCode==13) {
+			send_xbee_frame();
+		  }
+		}
+		  
+        var ser;
+        function plugin0()
+        {
+            return document.getElementById('plugin0');
+        }
+        plugin = plugin0;
+        
+        function recv(bytes, size)
+        {
+            alert(bytes+"_"+size);
+        }
+		function $(id){
+			return document.getElementById(id);
+		}
+/*		
+		function closeSerial(){
+			if ( ser.is_open() ){
+				ser.close();
+				console.log("Port closed");
+			}else{
+				console.log("Port already closed");
+			}
+			$('btn_close').disabled = true;
+			$('btn_open').disabled = false;
+		}
+        
+        function openSerial() 
+        {
+            ser = plugin().Serial;// Get a Serial object
+			ser.open($('com_port').value);// Open a port
+			ser.set_option(9600,0,8,0,0);// Set port options 
+			ser.recv_callback(manage_uart);
+			if  (ser.is_open){
+				console.log("Port opened");
+				$('btn_close').disabled = false;
+				$('btn_open').disabled = true;
+			}else{
+				console.log("Failed to open port");
+			}
+        }
+        function pluginValid()
+        {
+            if(plugin().valid){
+                alert(plugin().echo("This plugin seems to be working!"));
+            } else {
+                alert("Plugin is not working, Win7 user : have you installed the dll and run regsvr32 c:\\windows\\syswow64\\npjUART.dll ?");
+            }
+        }
+*/
+		function sendSerial(data, size){
+			// ADDR 
+			// FRAME : 
+			// var addr = document.getElementById('f_custom_addr').value;
+			// var frame = document.getElementById('xbee_frame').value
+			// $('term').innerHTML += "<span style='color: blue'>"+ addr + " : " + frame + " </span>";
+			//	);
+			//
+			// MyWebApp.send( addr, frame );
+			//	);
+			//
+			
+			AndroidFunction.showToast('frame : '+document.getElementById("xbee_frame").value + '\naddr : '+document.getElementById("f_custom_addr").value);
+			
+			var i = 0;
+			$('term').innerHTML += "<span style='color: blue'>"+byteToHexString(data,size)+" </span>";
+			for ( i=0; i<size;i++){
+				ser.send(data[i]);
+			}
+			console.log("Sent: ");
+			console.log(byteToHexString(data,size));
+			
+		}
+		
+		function manage_uart(bytes, size){
+			$('term').innerHTML += "<span style='color: red'>"+byteToHexString(bytes,size)+" </span>";
+			$('term').scrollTop = 99999;
+			for ( var i = 0; i < size; i++){
+				uart1_rx_buf[ uart1_rx_buf_idx++ ] = bytes[i];
+			}	
+			if ( isNaN(uart1_rx_buf_idx )){
+				console.log("Uart 1 idx is NaN");
+			}
+			manage_uart_xbee();
+		}
+		
+
+		var uart1_rx_buf = new Array();
+		var uart1_rx_buf_idx = 0;
+
+		var xbee_rx_frame = new Array();
+		var xbee_rx_frame_len = 0;
+		var xbee_rx_frame_type = 0;
+		var xbee_rx_frame_src_addr = "?? ?? ?? ?? ?? ?? ?? ??";
+
+		var XBEE_API_START_DELIM = 0x7E;
+		var XBEE_LEN_OFFSET = 2;
+		var XBEE_FRAME_TYPE_OFFSET = 3;
+		
+		function manage_uart_xbee() {
+
+			var length = 0, max_read_index, start = 0, i,last_processed_char =0;
+			var UART1_BUFFER_SIZE=uart1_rx_buf_idx + uart1_rx_buf.length;
+			max_read_index = uart1_rx_buf_idx ;
+			
+			while (1) {
+				if ( isNaN(max_read_index) ||isNaN(start) ){
+					console.log("Erreur de gestion uart rx : Start : "+start+" max read index : "+ max_read_index+" Uart1 buf idx : "+uart1_rx_buf_idx);
+					max_read_index = 0;
+					uart1_rx_buf_idx = 0;
+					break;
+				}
+				// 00 00 FF 00 FF 00
+				// 00 00 FF 0C F4 D5 4B 01 01 00 04 08 04 XX XX XX XX 5A 00
+				// looking for start delim
+				while ( start < max_read_index  // Char can be read
+						&&  uart1_rx_buf[start] != XBEE_API_START_DELIM ) { // SOF
+					start++;
+				}
+
+				// Here we got a start delim
+				if (max_read_index - start < XBEE_LEN_OFFSET) {
+					break; // length not received
+				}else{
+					// length rcvd
+					length = uart1_rx_buf[start + XBEE_LEN_OFFSET];
+					if (length > (UART1_BUFFER_SIZE - 4)){ // length + overhead + crc > Serial buffer size : overflow
+						start++;
+					} else if (max_read_index - start
+							< length + XBEE_LEN_OFFSET + 2  ) { // frame is not complete
+						break;
+					} else {
+						// Frame complete (Start delim + sizeof(LEN) + payload + CRC)
+
+						xbee_rx_frame_type = uart1_rx_buf[ start + XBEE_FRAME_TYPE_OFFSET ];
+						xbee_rx_frame_len = uart1_rx_buf[ start + XBEE_LEN_OFFSET ];
+						xbee_rx_frame = uart1_rx_buf.slice(start+4, start+xbee_rx_frame_len+3);
+
+						switch( xbee_rx_frame_type ){
+						case 0x88: // AT cmd response
+							console.log("At cmd response : "+byteToHexString(xbee_rx_frame,xbee_rx_frame.length));
+							process_at_cmd_response();
+							break;
+						case 0x90: // Rx packet
+							process_rx_packet(message);
+							break;
+						}
+
+						start += length + XBEE_LEN_OFFSET + 2;
+						last_processed_char = start;
+					}
+				}
+			}
+			for ( i=0; i< uart1_rx_buf_idx - last_processed_char; i++) {
+				uart1_rx_buf[i] = uart1_rx_buf[ last_processed_char + i];
+			}
+			
+			if ( isNaN(last_processed_char )){
+				console.log("Error last proc char : "+last_processed_char );
+			}
+			uart1_rx_buf_idx -= last_processed_char;
+		}		
+				
+		
+		var hexChar = ["0", "1", "2", "3", "4", "5", "6", "7","8", "9", "A", "B", "C", "D", "E", "F"];
+ 
+		function byteToHex(b) {
+			return hexChar[(b >> 4) & 0x0f] + hexChar[b & 0x0f];
+		}
+		
+		function byteToAsciiString(arr){
+			var str = "";
+			for ( i = 0; i < arr.length; i++){
+				if ( arr[i] >= 0x20 && arr[i] <0x80 ){
+					str+= String.fromCharCode(arr[i])+"";
+				}else{
+					str+= " "+byteToHex(arr[i])+" ";
+				}
+			}
+			return str;
+		}
+		
+		function byteToHexString(b,size){
+			var strhex="";
+			for ( var i = 0; i < size-1;i++)
+			{
+				strhex += byteToHex(b[i])+" ";
+			}
+			strhex += byteToHex(b[i]);
+			return(strhex);
+		}
+		
+		function hexStringToByteArr(str){
+			var hexArr = str.split(" ");
+			var byteArr = new Array();
+			for ( var i = 0 ; i < hexArr.length;i++){
+				byteArr[i] = h2d(hexArr[i]);
+			}
+			return byteArr;
+		}		
+		
+		function send_xbee_frame2(){
+			var byteArr = hexStringToByteArr(document.getElementById('xbee_frame2').value);
+			sendSerial(byteArr, byteArr.length);
+		}		
+		
+		function send_xbee_frame(){
+			var byteArr = hexStringToByteArr(document.getElementById('xbee_frame').value);
+			sendSerial(byteArr, byteArr.length);
+		}
+		
+
+		
+		function discover_nodes(){
+			// Conserver uniquement le broadcast, nettoyer le reste de la liste.
+			$('dest_id').innerHTML= '<option value="00 00 00 00 00 00 FF FF">BROADCAST (00 00 00 00 00 00 FF FF)</option>';
+			sendSerial([0x7E, 0x00, 0x04, 0x08, 0x01, 0x4E, 0x44, 0x64], 8); 
+		}
+		
+
+		function discover_myself(){
+			sendSerial([0x7E, 0x00, 0x04, 0x08, 0x01, 0x53, 0x4C, 0x57], 8); 
+		}		
+		
+	function get_ni(data){
+		var str_ni = "";
+		var i = 0;
+		while ( data[i] != 0x00){
+			str_ni += String.fromCharCode(data[i++])
+		}
+		return str_ni;
+	}
+	function process_at_cmd_response(){
+		if ( xbee_rx_frame[1] ==  0x4E && xbee_rx_frame[2] ==  0x44 ){ // ND
+			var addr = byteToHexString(xbee_rx_frame.slice(6,6+8),8);
+			var node_identifier = get_ni(xbee_rx_frame.slice(6+8+1, xbee_rx_frame.length));
+			$('dest_id').innerHTML+= '<option value="'+addr+'">'+node_identifier+" ("+addr+')</option>';
+		}else if ( xbee_rx_frame[1] ==  0x53 && xbee_rx_frame[2] ==  0x4C ){ //SL 
+			var my_addr = "00 13 A2 00 " +byteToHexString(xbee_rx_frame.slice(4,4+4),4);
+			$('f_predefined_payload').innerHTML+= '<option value="'+my_addr+'">MY('+my_addr+')</option>';
+		}
+	}
+
+	function stringToUtf16ByteArray(str){
+		var bytes = [];
+		//currently the function returns without BOM. Uncomment the next line to change that.
+		//bytes.push(254, 255);  //Big Endian Byte Order Marks
+	   for (var i = 0; i < str.length; ++i)
+	   {
+		   var charCode = str.charCodeAt(i);
+		   //char > 2 bytes is impossible since charCodeAt can only return 2 bytes
+		   bytes.push((charCode & 0xFF00) >>> 8);  //high byte (might be 0)
+		   bytes.push(charCode & 0xFF);  //low byte
+	   }
+		return bytes;
+	}
+
+
+		
+
+		var G2_FRAME_OS = 11;
+		var G2_FRAME_CMD_OS = 16;
+	function process_rx_packet(addr, msg){
+		// xbee_rx_frame ==> octets
+		// xbee_rx_frame = [ 0x7E, 0x00, 0x00, 0x90 ];
+		 //xbee_rx_frame.push( msg );
+		// xbee_rx_frame.push( [ 0x00, 0x00, 0x00, 0x00 ] ); // FF FE xx xx
+		// xbee_rx_frame.push( frame );
+		// xbee_rx_frame.push( [ 0x00 ] ); // CRC
+
+		xbee_rx_frame=hexStringToByteArr(addr);
+		xbee_rx_frame.push(0,0,0);
+		xbee_rx_frame=xbee_rx_frame.concat(hexStringToByteArr(msg));
+
+		xbee_rx_frame_src_addr = xbee_rx_frame.slice(4,4+4); // Take only 4 LSB
+
+		if ( xbee_rx_frame[G2_FRAME_OS] == 0xF3 ){ //G2 F3 Msg
+			console.log("Rx G2 Frame : "+byteToHexString(xbee_rx_frame.slice(G2_FRAME_OS,G2_FRAME_OS+6)));
+			switch(xbee_rx_frame[G2_FRAME_OS+1]){
+				case 0xFE:
+					process_device_msg();
+					break;
+				case 0x10:
+					process_evse_msg();
+					break;
+				case 0x30:
+					process_meter_msg();
+					break;
+				case 0x80:
+					process_auth_msg();
+					break;
+				case 0xFD:
+					process_prop_msg();
+					break;
+			}
+			$('term_g2').scrollTop = 99999;
+		}
+	}
+
+
+				
+	function process_device_msg() {
+		switch (xbee_rx_frame[G2_FRAME_CMD_OS]){
+			case 0xD0:
+				g2term("[DBG ] "+byteToAsciiString(xbee_rx_frame.slice(G2_FRAME_CMD_OS+1,G2_FRAME_CMD_OS+xbee_rx_frame.length-16),xbee_rx_frame.length-15));
+				break;
+			case 0xD7:
+				g2term("[DBG ]  FW version : "+byteToAsciiString(xbee_rx_frame.slice(G2_FRAME_CMD_OS,G2_FRAME_CMD_OS+7),6));
+				break;
+			case 0x20:
+				process_ping(xbee_rx_frame.slice(G2_FRAME_CMD_OS+1));
+				break;
+			case 0x26:
+				process_req_station();
+				break;
+				
+		}
+	}	
+		
+	function process_evse_msg() {
+		switch (xbee_rx_frame[G2_FRAME_CMD_OS]){
+			case 0x20:
+				
+				break;
+		}
+	}			
+	
+	function process_ping(frame){
+		var str = "[PING] ";
+		switch(frame[0]){ 
+			case 0x00:
+				str +="<span style='background-color: chartreuse'>IDLE";
+				break;
+			case 0x02:
+				str +="<span style='background-color: lightblue'>CONN";
+				break;
+			case 0x04:
+				str +="<span style='background-color: cyan'>CHARGING";
+				break;
+			case 0x05:
+				str +="<span style='background-color: darkTurquoise'>PRECHARGING";
+				break;
+			case 0x06:
+				str +="<span style='background-color: Aquamarine'>EV NOT CONN";
+				break;
+			case 0x07:
+				str +="<span style='background-color: SkyBlue'>PREPARING";
+				break;
+			case 0x08:
+				str +="<span style='background-color: PaleGreen'>FINISHING";
+				break;
+			case 0x62:
+				str +="<span style='background-color: DeepPink'>MAINTENANCE";
+				break;
+			case 0x63:
+				str +="<span style='background-color: lightCoral'>ERROR";
+				break;
+		}
+		var consigne = "SP: "+(frame[1] * 256  + frame[2]).toString();
+		
+		var error = ""
+		
+		
+		if ( frame[3] & 0x01 ){
+			error += "REL. FAIL. ";
+		}
+		if ( frame[3] & 0x02 ){
+			error += "LINE FAIL. ";
+		}
+		if ( frame[3] & 0x08 ){
+			error += "OVERCONS ";
+		}
+		if ( frame[3] & 0x04 ){
+			error += "PILOT ERR ";
+		}
+		if ( frame[3] & 0x10 ){
+			error += "NEUTRAL FAIL. ";
+		}
+		
+		var ext_status = "";
+		if ( frame[4] & 0x01 ){
+			ext_status += "NEED CH ";
+		}
+		if ( frame[4] & 0x02 ){
+			ext_status += "RESERVED ";
+		}
+		if ( frame[4] & 0x10 ){
+			ext_status += "3PH EV ";
+		}		
+		if ( frame[4] & 0x08 ){
+			ext_status += "BOOT ";
+		}		
+		if ( frame[4] & 0x20 ){
+			ext_status += "PLUG W/O SESSION ";
+		}		
+		var session = "";
+		if ($("is140").checked){
+			if ( frame.length > 6 ){
+				session+= "Sess. "+frame[6]+" Plug: "+frame[7]+" Tag:"+byteToHexString(frame.slice(10),frame[8]);
+			}
+		}
+		else if (frame.length > 5){
+			session+= "Sess. "+frame[5]+" Plug: "+frame[6]+" Tag:"+byteToHexString(frame.slice(9),frame[7]);
+		}
+		g2term(str+" "+consigne + " "+error+" "+ext_status+" "+session+"</span>");
+	}
+	
+	function process_req_station(){
+		var str="[REQ ] <span style='background-color: Plum'>";
+		g2term(str+"REQ STATION ADDRESS</span>");
+	}
+	
+	function process_meter_msg() {
+		switch (xbee_rx_frame[G2_FRAME_CMD_OS]){
+			case 0x70:
+				parse_energy_report(xbee_rx_frame.slice(G2_FRAME_CMD_OS+1));
+				break;
+		}
+	}	
+	
+	
+	function process_prop_msg() {
+
+
+	
+		switch (xbee_rx_frame[G2_FRAME_CMD_OS]){
+			case 0x02: // Get Prop
+				parse_tlv(xbee_rx_frame.slice(G2_FRAME_CMD_OS+1));
+				break;
+			case 0x04://Get List
+				parse_tlv_list(xbee_rx_frame.slice(G2_FRAME_CMD_OS+2));
+				break;
+		}
+	}	
+		
+	function parse_tlv_list(data){	
+	
+		var str ="";
+		for ( p = 0; p < xbee_rx_frame_len - 19; p+= 4){
+			str+= String.fromCharCode(data[p])+""+String.fromCharCode(data[p+1])+ " ("+data[p+2].toString()+",";
+			str+= data[p+3].toString()+")  ";
+		}
+		g2term("[PROP] <span style='background-color: grey; color :white'>"+str+"</span>");
+	}	
+	
+	var TYPE_UINT8_T = 2;
+	var TYPE_INT8_T		=3;
+	var TYPE_UINT16_T	=4;
+	var TYPE_INT16_T	=5;
+	var TYPE_UINT32_T	=6;
+	var TYPE_INT32_T	=7;
+	var TYPE_BYTE_ARR	=8;
+	var TYPE_BITFIELD	=9;	
+	var tlv = [
+		
+			[['M','V'],TYPE_BITFIELD,1],
+			[['M','U'],TYPE_UINT32_T,4],
+			[['M','B'],TYPE_UINT16_T,2],
+			[['M','F'],TYPE_BYTE_ARR,6],
+			[['M','R'],TYPE_UINT8_T,1],
+			[['M','M'],TYPE_UINT8_T,1],
+			[['M','A'],TYPE_UINT8_T,1],
+
+			[['E','W'],TYPE_INT32_T,4],
+			[['E','I'],TYPE_INT32_T,4],
+			[['E','i'],TYPE_UINT16_T,2],
+			[['E','t'],TYPE_UINT8_T,1],
+
+
+			[['P','c'],TYPE_UINT16_T,2],
+			[['P','v'],TYPE_UINT8_T,1],
+			[['P','O'],TYPE_UINT8_T,1],
+			[['P','R'],TYPE_UINT16_T,2],
+			[['P','3'],TYPE_UINT16_T,2],
+			[['P','L'],TYPE_UINT16_T,2],
+			[['P','l'],TYPE_UINT16_T,2],
+			[['P','S'],TYPE_UINT16_T,2],
+			[['P','B'],TYPE_UINT8_T,1],
+			[['P','b'],TYPE_UINT8_T,1],
+			[['P','C'],TYPE_UINT16_T,2],
+
+			[['C','S'],TYPE_UINT8_T,1],
+			[['C','N'],TYPE_UINT8_T,1],
+			[['C','m'],TYPE_UINT8_T,1],
+			[['C','M'],TYPE_UINT8_T,1],
+			[['C','A'],TYPE_UINT8_T,1],
+			[['C','D'],TYPE_UINT8_T,1],
+			[['C','P'],TYPE_UINT8_T,1],
+			[['C','a'],TYPE_UINT8_T,1],
+			[['C','E'],TYPE_UINT8_T,1],
+			[['C','V'],TYPE_UINT16_T,2],
+
+			[['S','I'],TYPE_UINT8_T,1],
+			[['S','T'],TYPE_BYTE_ARR,12],
+			[['S','D'],TYPE_UINT32_T,4],
+			[['S','S'],TYPE_UINT32_T,4],
+			[['S','C'],TYPE_UINT8_T,1],
+
+			[['I','A'],TYPE_BYTE_ARR,8],
+			[['I','U'],TYPE_BYTE_ARR,8],
+
+			[['R','m'],TYPE_BYTE_ARR, 25],
+
+			[['T','P'], TYPE_UINT16_T,2],
+			[['T','S'], TYPE_UINT16_T,2],
+			[['T','A'], TYPE_UINT16_T,2],
+			[['T','p'], TYPE_UINT16_T,2],
+			[['T','i'], TYPE_UINT16_T,2],
+			[['T','o'], TYPE_UINT16_T,2],
+
+
+			[['c','T'],TYPE_UINT8_T,1],
+
+			[['s','G'],TYPE_BITFIELD,1]
+		];
+	
+	function parse_tlv(data){
+
+		var rdIdx = 0,  wrIdx = 0, success= 1;
+		var tlv_idx;
+		var out_buf = "";
+		
+		while( rdIdx < ( data.length - 2 ) && success ){
+			tlv_idx = find_tlv( data.slice(rdIdx));
+			if ( tlv_idx >= 0 ){
+				out_buf += tlv[ tlv_idx ][ 0 ][0]+""+tlv[ tlv_idx ][ 0 ][1];
+				switch( tlv[ tlv_idx ][1] ){
+				case TYPE_BITFIELD:
+				case TYPE_BYTE_ARR:
+				case TYPE_INT8_T:
+				case TYPE_UINT8_T:
+				case TYPE_UINT16_T:
+				case TYPE_INT16_T:
+				case TYPE_UINT32_T:
+				case TYPE_INT32_T:
+					out_buf += "="+byteToHexString(data.slice(rdIdx+2,rdIdx+2+tlv[ tlv_idx ][2]),tlv[ tlv_idx ][2])+", ";
+					rdIdx += 2 + tlv[ tlv_idx ][2];
+					wrIdx += tlv[ tlv_idx ][2];
+					break;
+				default:
+					success = 0;
+					break;
+				}
+			}else{ //Stop parsing as it is impossible to find next tlv
+				success = 0;
+				break;
+			}
+		}
+		
+		g2term("[PROP] <span style='background-color: grey; color :white'>"+out_buf+"</span>");
+		
+	}	
+		
+	
+	function find_tlv( tag ){
+		var i;
+		for ( i = 0 ; i< tlv.length ; i++ ){
+			if ( tlv[ i ][ 0 ][0] == String.fromCharCode(tag[0]) &&  tlv[ i ][ 0 ][1] == String.fromCharCode(tag[1]) ){
+				return  i;
+			}
+		}
+		return -1;
+	}
+	
+	
+	function parse_energy_report(data){
+		var U_L1 = ( data[4] ).toString();
+		var I_L1 = (data[5] * 256  + data[6]).toString();
+		var U_L2 = ( data[7] ).toString();
+		var I_L2 = (data[8] * 256  + data[9]).toString();
+		var U_L3 = ( data[10] ).toString();
+		var I_L3 = (data[11] * 256  + data[12]).toString();
+		var P = (data[14] * 65536  +data[15] * 256  + data[16]).toString();
+		var E = (data[18] * 65536  +data[19] * 256  + data[20]).toString();
+		var T = data[21].toString();
+		var str = "V: "+U_L1+"/"+U_L2+"/"+U_L3+" I: "+I_L1+"/"+I_L2+"/"+I_L3+" P:"+P+" E:"+E+" T:"+T;
+		g2term("[RAPP] <span style='background-color: black; color :white'>"+str+"</span>");
+	
+	}
+	
+	
+	function process_auth_msg() {
+		switch (xbee_rx_frame[G2_FRAME_CMD_OS]){
+			case 0xE0:
+				var tag_len = xbee_rx_frame[G2_FRAME_CMD_OS+1];
+				var tag = xbee_rx_frame.slice(G2_FRAME_CMD_OS+3,G2_FRAME_CMD_OS+3+tag_len);
+				g2term("[AUTH] <span style='background-color: ivory;  :white'>Remote Auth Request for tag :"+byteToHexString(tag,tag_len)+"</span>");
+				break;
+			case 0xE2:
+				var session_id = xbee_rx_frame[G2_FRAME_CMD_OS+1];
+				var session_plug = (xbee_rx_frame[G2_FRAME_CMD_OS+2]==0x00)?"EV":"AUX";
+				var tag_len = xbee_rx_frame[G2_FRAME_CMD_OS+3];
+				var tag = byteToHexString(xbee_rx_frame.slice(G2_FRAME_CMD_OS+3,G2_FRAME_CMD_OS+3+tag_len+2),tag_len+2);
+				g2term("[AUTH] <span style='background-color: ivory;  :white'>Start Session: Id:"+session_id+", Plug:"+session_plug+", Tag:"+tag+"</span>");
+				break;
+			case 0xE3:
+				var session_id = xbee_rx_frame[G2_FRAME_CMD_OS+1];
+				var session_plug = (xbee_rx_frame[G2_FRAME_CMD_OS+2]==0x00)?"EV":"AUX";
+				var tag_len = xbee_rx_frame[G2_FRAME_CMD_OS+3];
+				var tag = byteToHexString(xbee_rx_frame.slice(G2_FRAME_CMD_OS+3,G2_FRAME_CMD_OS+3+tag_len+2),tag_len+2);
+				g2term("[AUTH] <span style='background-color: ivory;  :white'>Stop Session: Id:"+session_id+", Plug:"+session_plug+", Tag:"+tag+"</span>");
+				break;
+		}
+	}	
+		
+	
+	function g2term(msg){
+	
+		var date_str ="";
+		var src_addr = "";
+		if ($('dispAddr').checked){
+			src_addr = "["+byteToHexString(xbee_rx_frame_src_addr,4)+"] ";
+		}
+	
+		if ( $('dispTime').checked){
+			var currentdate = new Date();
+			var date_str = currentdate.getHours() + ":"+ currentdate.getMinutes() + ":" + currentdate.getSeconds()+" ";
+		}
+		$('term_g2').innerHTML+= date_str+src_addr+msg +"<br/>";
+	}	
+	
+	
+	var console = {
+		log : function log(){
+		}
+	}
+	
+    </script>
+	
+
+
+
+    <body onload="manage_interface()">
+
+<h2>G2Smart Meter Frame Builder</h2>
+<p id="mytext">Hello!</p>
+
+	<div id="terminal">
+	<object id="plugin0" type="application/x-juart" width="0" height="0" ></object>
+	
+		<input type="text" size ="8" value="COM5" id="com_port"/>
+		<input id="btn_open" type="button" onclick="openSerial();"/ value="open"/>	
+		<input id="btn_close" type="button" onclick="closeSerial();"/ value="close"/>
+		<input type="button" onclick="document.getElementById('term').innerHTML='';document.getElementById('term_g2').innerHTML='';"/ value="clear"/>	
+		<input type="button" onclick="pluginValid();"/ value="Plugin OK ?"/>
+		<input type="checkbox" id="is140" checked="checked"/> FW >= 1.4.0
+		<input type="checkbox" id="dispAddr" checked="checked" /> Adresse source
+		<input type="checkbox" id="dispTime" /> Heure
+
+	<br/>
+	<div>
+	<div  id="term" style="font-family:monospace;width:400px; height:180px; overflow:scroll; float:left; display:inline-block" >	</div>
+	<div  id="term_g2" style="font-size:10pt;font-family:monospace;width:600px; height:180px; overflow:scroll; float:left; display:inline-block" >	</div>
+	</div>	
+	</div>
+	
+<p>
+  <input id="xbee_frame" type="text" size="140" width="180"></input>
+  <input id="send_xbee_frame" type="button" onclick="send_xbee_frame();" value="Send Frame"/>
+</p>
+
+<table>
+  <tr>
+    <th>CU <input type="button" value="Discover" onclick="discover_nodes()"/></th>
+    <th>Infra Dst</th>
+    <th>EP Dst</th>
+    <th>CMD</th>
+    <th>Payload <input type="button" value="Myself" onclick="discover_myself()"/></th>
+  </tr>
+  <tr>
+    <td>
+      <select id="dest_id" name="dest_id" onMouseUp="$('f_custom_addr').value=this.value;manage_interface()" multiple size="10">
+      
+        <option value="00 00 00 00 00 00 FF FF"> BROADCAST</option>
+      </select> 
+    </td>
+    <td>
+      <select id="f_infra_dst" name="f_infra_dst" onMouseUp="$('f_custom_infra_dst').value=this.value;manage_interface()" multiple size="10">
+        <option value="60" > ACTUATOR</option>
+        <option value="FE" > DEVICE MGMT</option>
+        <option value="FD" > PROP MGR MGMT</option>
+        <option value="10" > EVSE</option>
+        <option value="30" > METER</option>
+        <option value="41" > TEMP SENSOR</option>
+        <option value="70" > TIC</option>
+        <option value="80" > AUTH DEVICE</option>
+      </select> 
+      
+    </td>
+    <td>
+      <select id="f_ep_dst_meter" name="f_ep_dst_meter" onMouseUp="$('f_custom_ep_dst').value=this.value;manage_interface()" multiple size="10" style="display:none">
+        <option value="00" > METER 3PH</option>
+        <option value="01" > METER L1</option>
+        <option value="02" > METER L2</option>
+        <option value="03" > METER L3</option>
+        <option value="04" > METER CALIBRATION</option>
+      </select> 
+      <select id="f_ep_dst_device_mgmt" name="f_ep_dst_device_mgmt" onMouseUp="$('f_custom_ep_dst').value=this.value;manage_interface()" multiple size="10">
+        <option value="00" > DEVICE MGMT</option>
+        <option value="01" > RTC</option>
+      </select> 
+      <select id="f_ep_dst_prop_mgmt" name="f_ep_dst_prop_mgmt" onMouseUp="$('f_custom_ep_dst').value=this.value;manage_interface()" multiple size="10">
+        <option value="00" > PROP MGR</option>
+      </select> 
+      <select id="f_ep_dst_tic" name="f_ep_dst_tic" onMouseUp="$('f_custom_ep_dst').value=this.value;manage_interface()" multiple size="10" style="display:none">
+        <option value="00" > TIC</option>
+      </select> 
+      <select id="f_ep_dst_actuator" name="f_ep_dst_actuator" onMouseUp="$('f_custom_ep_dst').value=this.value;manage_interface()" multiple size="10" style="display:none">
+        <option value="00" > ACTUATOR</option>
+      </select>  
+      <select id="f_ep_dst_evse" name="f_ep_dst_evse" onMouseUp="$('f_custom_ep_dst').value=this.value;manage_interface()" multiple size="10" style="display:none">
+        <option value="00" > EVSE</option>
+      </select>  
+      <select id="f_ep_dst_temp_sensor" name="f_ep_dst_temp_sensor" onMouseUp="$('f_custom_ep_dst').value=this.value;manage_interface()" multiple size="10" style="display:none">
+        <option value="00" > TEMP_SENSOR</option>
+      </select>     
+      <select id="f_ep_dst_auth_device" name="f_ep_dst_auth_device" onMouseUp="$('f_custom_ep_dst').value=this.value;manage_interface()" multiple size="10" style="display:none">
+        <option value="00" > AUTH </option>
+      </select>       
+      
+      
+    
+    </td>
+    <td>
+      <select id="f_cmd_meter" name="f_cmd_meter" onMouseUp="$('f_custom_cmd').value=this.value;manage_interface()" size="10" multiple style="display:none">
+        <option  title="infradst,epdst,ratio,linecyc[2],ph, PL = target@" value="50 00 00 01 03 E8 00"> CALIBRATION.CONFIG </option>
+        <option value="51 01"> CALIBRATION.ROLE = REF</option>
+        <option value="52 00 E6 0D AC 00 00 08 98 14"> CALIBRATION.REF (230V, 3500 mA, 2200mWh, 20�C)</option>      
+        <option value="53 11 47 00 A6 01 02"> CALIBRATION.COEF (volt div, amp div, mwh num, mwh denum)</option> 
+        <option value="00"> METER.POWER.GET</option>
+        <option value="01"> METER.ENERGY.GET</option>
+        <option value="71 01 2C 0A"> REPORT.CONFIG (300s, 10%)</option>
+        
+      </select> 
+      
+    
+      <select id="f_cmd_actuator" name="f_cmd_actuator" onMouseUp="$('f_custom_cmd').value=this.value;manage_interface()" size="10" multiple style="display:none">
+        <option value="2A"> ACTUATOR.DISABLE </option>
+        <option value="29"> ACTUATOR.ENABLE </option>       
+      </select>   
+      
+ 
+      <select id="f_cmd_device_mgmt" name="f_cmd_device_mgmt" onMouseUp="$('f_custom_cmd').value=this.value;manage_interface()" size="10" multiple>
+        <option value="A1"> GET STATUS</option>
+        <option value="27 0F"> Blink 15 s</option>
+        <option value="23"> CHANGE_STATION_ADDRESS</option>
+        <option value="D4 00"> VERBOSE.NONE</option>
+        <option value="D4 0F"> VERBOSE.ALL</option>
+        <option value="D5"> RESET</option>
+        <option value="D6"> FW:GET_VERSION</option>
+        <option value="BB 42 53 4C 01 02 03 04"> RUN BSL (version 01 02 03 04)</option>
+        <option value="DE"> READ EEPROM PAGE [0-255]</option>
+        <option value="DF"> WRITE EEPROM PAGE [0-255]</option>
+        <option value="DA 10 10 04"> READ MEM @ [@ = 0x0000-0xFFFF, len = 0x0-0xFF]</option>
+      </select>      
+
+	   
+      <select id="f_cmd_prop_mgmt" name="f_cmd_prop_mgmt" onMouseUp="$('f_custom_cmd').value=this.value;manage_interface()" size="10" multiple>
+        <option value="00 43 45 52 6D"> Read Mnemo (ex : CE, Rm)</option>
+        <option value="01 4D 52 03"> Ex: Reboot 3 sec</option>
+        <option value="03 00"> Get Mnemo List (from offset 00)</option>
+      </select>      
+      
+      <select id="f_cmd_tic" name="f_cmd_tic" onMouseUp="$('f_custom_cmd').value=this.value;manage_interface()" size="10" multiple style="display:none">
+        <option value="40"> TIC.ABO</option>
+        <option value="41"> TIC.TARIF</option>
+        <option value="42"> TIC.INDEX</option>
+        <option value="43"> TIC.POWER</option>
+        <option value="44"> TIC.ALARM</option> 
+      </select>      
+      
+      <select id="f_cmd_temp_sensor" name="f_cmd_temp_sensor" onMouseUp="$('f_custom_cmd').value=this.value;manage_interface()" size="10" multiple style="display:none">
+        <option value="0A"> TEMPERATURE.GET</option>
+      </select> 
+      
+      <select id="f_cmd_evse" name="f_cmd_evse" onMouseUp="$('f_custom_cmd').value=this.value;manage_interface()" size="10" multiple style="display:none">
+        <option value="02 00 00"> CHARGE DISABLE</option>
+		<option value="02 0E 60"> CHARGE 3680 VA</option>
+		<option value="22"> CU.DISABLE</option>
+        <option value="21"> CU.ENABLE</option>
+      </select> 
+      
+      <select id="f_cmd_auth_device" name="f_cmd_auth_device" onMouseUp="$('f_custom_cmd').value=this.value;manage_interface()" size="10" multiple style="display:none">
+        <option value="E1 01 04 00 AA BB CC DD"> AUTH.ID_MGMT(AUTH?, ID_LEN, ID_PROTO,ID)</option>
+        <option value="E4 01 04 00 AA BB CC DD"> AUTH.REMOTE_START(AUTH?, ID_LEN, ID_PROTO,ID)</option>
+        <option value="E4 00"> AUTH.REMOTE_STOP</option>
+        <option title="SET/CLR, TIMEOUT(s), ID.len, ID.proto, ID.id" value="E5 01 01 2C 04 00 AA BB CC DD"> AUTH.RESERVATION(SET/CLR, EXPIRATION[2] ID_LEN, ID_PROTO,ID)</option>
+        <option value="E6 66 72 65 65"> AUTH.CLEAR_CACHE</option>
+		<option value="E7 XX">GET_SESSION_FROM_CACHE(SESSION_ID)</option>
+        <option value="E9 01 20 FF FF FF FF FF FF 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F"> AUTH.SET_TAG_WRITER_MODE(0/1,@,KEY,VAL)</option>
+		<option value="EA 20 FF FF FF FF FF FF 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F"> AUTH.SET_TAG_RFID_TRIPLET(@,KEY,VAL)</option>
+		<option value="EB 01"> Admin Mode On</option>
+      </select> 
+          
+      
+      
+    </td>
+    <td>
+      <select id="f_predefined_payload" name="f_predefined_payload" onMouseUp="$('f_payload').value=this.value;manage_interface()" multiple size="10">
+        <option></option>
+        <option value="00 13 A2 00 40 54 F6 72">XBEE CALIBRATION</option>
+        <option value="03 20 02 BC 02 58 01 F4 01 72 00 64 03 84 03 16 01 F4 00 E6 00 6E 11 B6 00 35 00 00 FF E7">DEFAULT CALIB DATA</option>
+      </select> 
+    </td>
+    <td>
+      <p  style="text-align:left">
+        Infra Src : <input id="f_infra_src" onKeyUp="manage_interface()" type="text" size="4" width="4" value="00"></input><br/>
+        EP Src : <input id="f_ep_src" onKeyUp="manage_interface()" type="text" size="4" width="4" value="00"></input>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td><input id="f_custom_addr" onKeyUp="manage_interface()" type="text" size="24" width="24"></input></td>
+    <td><input id="f_custom_infra_dst" onKeyUp="manage_interface()" type="text" size="4" width="4"></input></td>
+    <td><input id="f_custom_ep_dst" onKeyUp="manage_interface()" type="text" size="4" width="4"></input></td>
+    <td> <input id="f_custom_cmd" onKeyUp="manage_interface()" type="text" size="20" width="10"></input></td>
+    <td><input id="f_payload" onKeyUp="manage_interface()" type="text" size="20" width="20"></input></td>
+    <td></td>
+  </tr>
+  
+</table>
+
+<p>
+decimal to hex 16 : <input type="text" id="in_dec" onkeyup="computeHex(this.value);" onchange="computeHex(this.value);"/> <input type="text" id="out_hex" onkeyup="computeDec(this.value);" onchange="computeDec(this.value);"/>
+<br/>Asii to hex : <input type="text" id="in_ascii" onkeyup="computeAsciiHex(this.value);" onchange="computeAsciiHex(this.value);"/> <input type="text" id="out_hex2"/>
+disable xbee header : <input type="checkbox" id="remove_xbee_header" onClick="manage_interface()"/>
+</p>
+
+<br/>
+<p>
+  <input id="xbee_frame2" type="text" size="140" width="180"></input>
+  <input id="send_xbee_frame2" type="button" onclick="send_xbee_frame2();" value="Send Frame"/>
+</p>
+Note :
+<ul>
+  <li><i>A la premi�re utilisation, veiller � cliquer sur l'ensemble des comboboxes</i></li>
+  <li><i>Toutes les commandes sont affich�es pour un infra_elt donn�, quel que soit l'EP s�lectionn�</i></li>
+  <li><i>Pour faire fonctionner le plugin jUART sous win7 : regsvr32 c:\windows\syswow64\npjUART.dll </i></li>
+</ul>
+
+
+<script type="text/javascript">
+
+
+
+function combo(thelist, theinput)
+{
+  theinput = document.getElementById(theinput);  
+  thelist = document.getElementById(thelist);
+  var idx = thelist.selectedIndex;
+  var content = thelist.options[idx].innerHTML;
+  theinput.value = content;	
+  return content;
+}
+
+function $(id){
+  return document.getElementById(id);
+}
+
+
+function mask_ep( ){
+  $('f_ep_dst_meter').style.display = "none";
+  $('f_ep_dst_device_mgmt').style.display = "none";
+  $('f_ep_dst_prop_mgmt').style.display = "none";
+  $('f_ep_dst_tic').style.display = "none";
+  $('f_ep_dst_actuator').style.display = "none";
+  $('f_ep_dst_temp_sensor').style.display = "none";
+  $('f_ep_dst_auth_device').style.display = "none";
+  $('f_ep_dst_evse').style.display = "none";
+  switch ( $('f_infra_dst').value ){
+    case "60":
+      $('f_ep_dst_actuator').style.display = "";
+      break;
+    case "10":
+      $('f_ep_dst_evse').style.display = "";
+      break;
+    case "FE":
+      $('f_ep_dst_device_mgmt').style.display = "";
+      break;
+    case "FD":
+      $('f_ep_dst_prop_mgmt').style.display = "";
+      break;
+    case "30":
+      $('f_ep_dst_meter').style.display = "";
+      break;
+    case "41":
+      $('f_ep_dst_temp_sensor').style.display = "";
+      break;
+    case "70":
+      $('f_ep_dst_tic').style.display = "";
+      break;
+    case "80":
+      $('f_ep_dst_auth_device').style.display = "";
+      break;
+    default: 
+      $('f_ep_dst_device_mgmt').style.display = "";
+ }
+}
+
+
+function mask_cmd( ){
+  $('f_cmd_meter').style.display = "none";
+  $('f_cmd_device_mgmt').style.display = "none";
+  $('f_cmd_prop_mgmt').style.display = "none";
+  $('f_cmd_tic').style.display = "none";
+  $('f_cmd_actuator').style.display = "none";
+  $('f_cmd_temp_sensor').style.display = "none";
+  $('f_cmd_auth_device').style.display = "none";
+  $('f_cmd_evse').style.display = "none";
+  switch ( $('f_infra_dst').value ){
+    case "60":
+      $('f_cmd_actuator').style.display = "";
+      break;
+    case "10":
+      $('f_cmd_evse').style.display = "";
+      break;
+    case "FE":
+      $('f_cmd_device_mgmt').style.display = "";
+      break;
+    case "FD":
+      $('f_cmd_prop_mgmt').style.display = "";
+      break;
+    case "30":
+      $('f_cmd_meter').style.display = "";
+      break;
+    case "41":
+      $('f_cmd_temp_sensor').style.display = "";
+      break;
+    case "70":
+      $('f_cmd_tic').style.display = "";
+      break;
+    case "80":
+      $('f_cmd_auth_device').style.display = "";
+      break;
+    default:  
+      $('f_cmd_device_mgmt').style.display = "";
+ }
+}
+
+
+function build_xbee_frame(){
+  var frame={};
+  var addr=$('f_custom_addr').value;
+  var infra_src=$('f_infra_src').value;
+  var infra_dst=$('f_custom_infra_dst').value;
+  var ep_src=$('f_ep_src').value;
+  var ep_dst=$('f_custom_ep_dst').value;
+  var cmd=$('f_custom_cmd').value;
+  var payload=$('f_payload').value;
+
+  if(payload.length>=2){
+    payload=" "+payload;
+  }
+  if ( $('remove_xbee_header').checked != 1 ){
+    var frame_length=2+8+4+2+1+2+Math.ceil($('f_custom_cmd').value.length/3)+Math.ceil($("f_payload").value.length/3);
+    frame_length = frame_length.toString(16);
+    var str=" 10 01 "+addr+ " FF FE 05 00 F3 "+infra_src+" "+infra_dst+" "+ep_src+" "+ep_dst+" "+cmd+payload;
+  }else{
+    var frame_length=1+1+1+1+1+Math.ceil($('f_custom_cmd').value.length/3)+Math.ceil($("f_payload").value.length/3);
+    if( frame_length < 16){
+      frame_length = frame_length.toString(16);
+      frame_length = "0"+frame_length;
+    }else{
+      frame_length = frame_length.toString(16);
+    }
+    var str=" F3 "+infra_src+" "+infra_dst+" "+ep_src+" "+ep_dst+" "+cmd+payload;
+  }
+  var lrc=calc_lrc(str);
+//  document.getElementById("xbee_frame").value="7E 00 "+frame_length+str+" "+lrc;
+  document.getElementById("xbee_frame").value=str.substring(1);
+
+}
+
+function manage_interface(){
+  mask_ep();
+  mask_cmd();
+  build_xbee_frame();
+}
+
+function reverse_endianness_hhhh(str){
+  return str.split(" ")[1]+" "+str.split(" ")[0];
+  }
+
+
+function calc_lrc(str){
+  var lrc=0;
+  var str_lrc="";
+  var byteArr=str.split(" ");
+  
+  for(var i=0;i<byteArr.length;i++){
+    if ( byteArr[i] == '')
+      continue;
+    lrc+=h2d(byteArr[i]);
+  }
+  if (isNaN(lrc)){
+    $('xbee_frame').style.color = 'red';
+  }else{
+    $('xbee_frame').style.color = 'green';
+  }
+  lrc=255-(lrc&0xFF);
+  if(lrc<0x10)str_lrc="0"+lrc.toString(16);
+  else str_lrc=lrc.toString(16);
+  return str_lrc.toUpperCase();
+}
+
+function h2d(num){
+  return parseInt(num,16);
+}
+
+function str2hhhh(str){
+  var num=parseInt(str);
+  var str=null;
+  if(num<0){
+    if(num>-256 && num <=-241){str="FF0"+(256+num).toString(16).toUpperCase();
+      //alert("FF0"+(256+num).toString(16).toUpperCase());
+    } // Only work til -127 ?
+    else if(num>-256)str="FF"+(256+num).toString(16).toUpperCase(); // Only work til -127 ?
+    else str = (65536+num).toString(16).toUpperCase();
+    return str.substring(0,2)+" "+str.substring(2,4);
+  }else{
+    if(num<0x10)str="000"+num.toString(16).toUpperCase();
+    else if(num<0x100)str="00"+num.toString(16).toUpperCase();
+    else if(num<0x1000)str="0"+num.toString(16).toUpperCase();
+    else str=num.toString(16).toUpperCase();
+    return str.substring(0,2)+" "+str.substring(2,4);
+  }
+}
+
+function elt2hh(elt){
+  var val = parseInt($(elt).value);
+  if ( val >= 0 ){
+    if ( val <= 0x0F ){
+      return "0"+val.toString(16);
+    }else{
+      return val.toString(16);
+    }
+   }
+  else
+  {
+    val = (256 + val )&0xFF;
+    return val.toString(16);
+  }
+}
+
+
+
+
+
+function computeHex(val){
+  $('out_hex').value = str2hhhh(val);
+}
+
+function computeDec(val){
+ $('in_dec').value = parseInt(val.replace(/ /g,''),16);
+}
+
+function computeAsciiHex(val){
+	var buf = "";
+	for (var i=0;i<val.length;++i) {
+		buf +=  val.charCodeAt(i).toString(16)+" ";
+	}
+	$('out_hex2').value = buf;
+
+}
+
+	</script>
+	
+
+		
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/drawable-v21/fab_ripple.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/drawable-v21/fab_ripple.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/drawable-v21/md_btn_selector_ripple_dark.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/exploded-aar/com.github.afollestad.material-dialogs/core/0.8.5.7/res/drawable-v21/md_btn_selector_ripple_dark.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/drawable-v21/fab_shape.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/drawable-v21/fab_shape.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/drawable-v21/md_btn_selector_ripple.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/exploded-aar/com.github.afollestad.material-dialogs/core/0.8.5.7/res/drawable-v21/md_btn_selector_ripple.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/drawable-v21/button_ripple.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/drawable-v21/button_ripple.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/drawable-v21/fab_shape.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/drawable-v21/fab_shape.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/drawable-v21/md_btn_selector_ripple_dark.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.github.afollestad.material-dialogs/core/0.8.5.7/res/drawable-v21/md_btn_selector_ripple_dark.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/drawable-v21/fab_ripple.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/drawable-v21/fab_ripple.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/drawable-v21/md_btn_shape.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/exploded-aar/com.github.afollestad.material-dialogs/core/0.8.5.7/res/drawable-v21/md_btn_shape.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/drawable-v21/md_btn_selector_ripple.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.github.afollestad.material-dialogs/core/0.8.5.7/res/drawable-v21/md_btn_selector_ripple.xml"
+    },
+    {
+        "merged": "/home/fachati/AndroidStudioProjects/G2BEE/app/build/intermediates/res/merged/debug/drawable-v21/button_ripple.xml",
+        "source": "/home/fachati/AndroidStudioProjects/G2BEE/app/src/main/res/drawable-v21/button_ripple.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/debug/drawable-v21/md_btn_shape.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.github.afollestad.material-dialogs/core/0.8.5.7/res/drawable-v21/md_btn_shape.xml"
+    }
+]

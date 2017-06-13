@@ -1,0 +1,102 @@
+[
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/abc_slide_in_bottom.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/select_text.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/anim/select_text.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/decelerate_cubic.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.github.afollestad.material-dialogs/core/0.8.5.7/res/anim/decelerate_cubic.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/design_fab_in.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/anim/design_fab_in.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/design_fab_out.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/anim/design_fab_out.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/abc_slide_out_top.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/design_bottom_sheet_slide_out.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/anim/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/zoom_in.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/anim/zoom_in.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/abc_slide_out_bottom.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/expand_more.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/anim/expand_more.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/design_bottom_sheet_slide_in.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/anim/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/abc_fade_in.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/design_snackbar_in.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/anim/design_snackbar_in.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/abc_popup_enter.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/expand_less.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/anim/expand_less.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/card_elevation.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/anim/card_elevation.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/abc_slide_in_top.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/popup_exit.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.github.afollestad.material-dialogs/core/0.8.5.7/res/anim/popup_exit.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/design_snackbar_out.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/anim/design_snackbar_out.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/abc_popup_exit.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/popup_enter.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.github.afollestad.material-dialogs/core/0.8.5.7/res/anim/popup_enter.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/abc_fade_out.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/res/merged/release/anim/fab_elevation.xml",
+        "source": "/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/src/main/res/anim/fab_elevation.xml"
+    }
+]

@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Theme -->
+    <color name="indigo_500">#3F51B5</color>
+    <color name="indigo_700">#303F9F</color>
+    <color name="indigo_900">#1A237E</color>
+    <color name="green_500">#4CAF50</color>
+    <color name="green_700">#388E3C</color>
+
+    <!-- Images -->
+    <color name="blue_500">#2196F3</color>
+    <color name="teal_500">#4DB6AC</color>
+
+    <!-- Avatars -->
+    <!-- Networking -->
+    <color name="blue_400">#42A5F5</color>
+    <!-- Addressing -->
+    <color name="teal_400">#26A69A</color>
+    <!-- Security -->
+    <color name="green_400">#66BB6A</color>
+    <!-- RF Interfacing -->
+    <color name="orange_700">#F57C00</color>
+    <!-- Sleep Modes -->
+    <color name="blue_800">#1565C0</color>
+    <!-- Serial Interfacing -->
+    <color name="pink_400">#EC407A</color>
+    <!-- I/O Settings -->
+    <color name="red_600">#E53935</color>
+    <!-- Diagnostic -->
+    <color name="deep_purple_300">#9575CD</color>
+
+    <!-- White -->
+    <color name="white_100">#FFFFFFFF</color>
+    <color name="white_70">#B2FFFFFF</color>
+
+    <!-- Black -->
+    <color name="highlight">#0E000000</color>
+    <color name="highlight_control">#1E000000</color>
+    <color name="background">#F3F3F3</color>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="grey_400">#BDBDBD</color>
+    <color name="grey_500">#9E9E9E</color>
+    <color name="grey_700">#616161</color>
+
+    <!-- Font color -->
+    <color name="black_87">#DD000000</color>
+    <color name="black_54">#89000000</color>
+    <color name="black_26">#42000000</color>
+
+</resources>

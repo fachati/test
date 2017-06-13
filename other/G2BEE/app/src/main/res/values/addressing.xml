@@ -1,0 +1,128 @@
+<resources>
+
+    <!-- Addressing -->
+    <string-array name="xbee_addressing_commands">
+        <item>SH</item>
+        <item>SL</item>
+        <item>MY</item>
+        <item>DH</item>
+        <item>DL</item>
+        <item>NI</item>
+        <item>NH</item>
+        <item>BH</item>
+        <item>AR</item>
+        <item>DD</item>
+        <item>NT</item>
+        <item>NO</item>
+        <item>NP</item>
+        <item>CR</item>
+    </string-array>
+
+    <string-array name="xbee_addressing_command_names">
+        <item>Serial number high</item>
+        <item>Serial number low</item>
+        <item>16-bit network address</item>
+        <item>Destination address high</item>
+        <item>Destination address low</item>
+        <item>Node identifier</item>
+        <item>Maximum hops</item>
+        <item>Broadcast radius</item>
+        <item>Many-to-one route broadcast time</item>
+        <item>Device Type Identifier</item>
+        <item>Node discovery backoff</item>
+        <item>Node discovery options</item>
+        <item>Maximum number of API transmission bytes</item>
+        <item>PAN conflict threshold</item>
+    </string-array>
+
+    <string-array name="xbee_addressing_descriptions">
+        <item>Read-only parameter\n\nRead high 32 bits of modems unique IEEE 64-bit
+            Extended Address.
+        </item>
+        <item>Read-only parameter\n\nRead low 32 bits of modems unique IEEE 64-bit
+            Extended Address.
+        </item>
+        <item>Read-only parameter\n\nRead the 16 bit Network Address for the modem.\n0xFFFE
+            means the device has not joined a PAN.
+        </item>
+        <item>Range: 0x0 - 0xFFFFFFFF (Default: 0)\n\nSet/read the upper 32 bits of the 64 bit
+            destination extended address.\n0x000000000000FFFF is the broadcast address for
+            the PAN.\n0x0000000000000000 can be used to address the Pan Coordinator.
+        </item>
+        <item>Set/read the lower 32 bits of the 64 bit destination extended
+            address.\n0x000000000000FFFF is the broadcast address for the PAN. 0x0000000000000000
+            can be used to address the Pan Coordinator.
+        </item>
+        <item>0 - 20 ASCII characters.\n(Default: \' \')\n\nSet/read Node Identifier string.</item>
+        <item>Range: 0x0 - 0x1E (Default: 0)\n\nSet/read the maximum hops limit.\nThis limit
+            sets the maximum number of broadcast hops (BH) and determines the unicast timeout
+            (unicast timeout = (50 × NH) + 100). A unicast timeout of 1.6 seconds (NH=30) is
+            enough time for the data and acknowledgment to traverse about 8 hops.
+        </item>
+        <item>Range: 0x0 - 0xFF (Default: FF)\n\nSet/read the transmission radius for broadcast
+            data transmissions.\nSet to 0 for maximum radius.
+        </item>
+        <item>Range: 0x0 - 0xFF (Default: FF)\n\nSet/read the time between aggregation route
+            broadcast times.\nAn aggregation route broadcast creates a route on all devices
+            in the network back to the device that sends the aggregation broadcast. Setting AR to
+            0xFF
+            disables aggregation route broadcasting. Setting AR to 0 sends one broadcast.
+        </item>
+        <item>Range: 0x0 - 0xFFFFFFFF (Default: 30000)\n\nSet/read the device type identifier
+            value.\nThis can be used to differentiate multiple XBee-based products.
+        </item>
+        <item>Range: 0x20 - 0xFF (Default: 3C)\n\nSet/read Node Discovery backoff register.\nThis
+            sets the maximum delay for Node Discovery responses to be sent (ND, DN).
+        </item>
+        <item>Range: 0x0 - 0x3 (Default: 0)\n\nSets the node discovery options register.
+            Options include : \n0x01 - Append DD value to end of node discovery\n0x02 - Return
+            devices
+            own ND response first
+        </item>
+        <item>Read-only parameter\n\nRead the maximum number of bytes that can be sent in
+            a single API tx request frame.\nThe maximum RF payload per unicast packet is limited
+            to 66 bytes if security is enabled (EE) or 84 otherwise. Source routing
+            and fragmentation, if used, may further reduce the maximum RF payload size.
+            Broadcast RF packets allow 8 more bytes than unicast.
+        </item>
+        <item>Range: 0x1 - 0x3F (Default: 3)\n\nSet/read threshold for the number of PAN ID
+            conflict reports that must be received by the network manager within one minute
+            to trigger a PAN ID change.
+        </item>
+    </string-array>
+
+    <string-array name="xbee_addressing_input_types">
+        <item>READ ONLY</item>
+        <item>READ ONLY</item>
+        <item>READ ONLY</item>
+        <item>EDIT TEXT</item>
+        <item>EDIT TEXT</item>
+        <item>ASCII EDIT TEXT</item>
+        <item>SLIDER</item>
+        <item>SLIDER</item>
+        <item>SLIDER</item>
+        <item>EDIT TEXT</item>
+        <item>SLIDER</item>
+        <item>SLIDER</item>
+        <item>READ ONLY</item>
+        <item>SLIDER</item>
+    </string-array>
+
+    <string-array name="xbee_addressing_ranges">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>0,1E,0</item>
+        <item>0,FF,FF</item>
+        <item>0,FF,FF</item>
+        <item></item>
+        <item>20,FF,3C</item>
+        <item>0,3,0</item>
+        <item></item>
+        <item>1,3F,3</item>
+    </string-array>
+
+</resources>

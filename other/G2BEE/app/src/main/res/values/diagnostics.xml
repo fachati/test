@@ -1,0 +1,62 @@
+<resources>
+
+    <!-- Diagnostic Commands -->
+    <string-array name="xbee_diagnostics_commands">
+        <item>VR</item>
+        <item>HV</item>
+        <item>AI</item>
+        <item>DB</item>
+        <item>%V</item>
+        <item>TP</item>
+    </string-array>
+
+    <string-array name="xbee_diagnostics_command_names">
+        <item>Firmware version</item>
+        <item>Hardware version</item>
+        <item>Association indication</item>
+        <item>RSSI of last packet</item>
+        <item>Supply voltage</item>
+        <item>Temperature</item>
+    </string-array>
+
+    <string-array name="xbee_diagnostics_descriptions" formatted="false">
+        <item>Read-only parameter.\n\nRead modem firmware version number.</item>
+        <item>Read-only parameter.\n\nRead modem hardware version number.</item>
+        <item>Read-only parameter.\n\nRead Association status code to monitor association
+            progress.
+        </item>
+        <item>Read-only parameter.\n\nRead the RSSI of the last received packet or APS
+            acknowledgment.
+        </item>
+        <item>Read-only parameter.\n\nRead the supply voltage of the module.\nThe %V
+            measurement returns { 4 × (Vcc/4) } where (Vcc/4) is the measurement value
+            from the 10-bit A/D read, and the (4×) multiple allows the application
+            to use the same formula to convert %V into mV units as it would
+            to convert any A/D reading to mV: mV = (%V) × (1200/1024). (1200mV
+            is the A/D reference voltage.)\nA %V response of 0x900 (2304 decimal)
+            represents 2700mV, or 2.7V.
+        </item>
+        <item>Read-only parameter.\n\nRead power compensation temperature sensor in units of
+            Celsius degrees.
+        </item>
+    </string-array>
+
+    <string-array name="xbee_diagnostics_input_types">
+        <item>READ ONLY</item>
+        <item>READ ONLY</item>
+        <item>READ ONLY</item>
+        <item>READ ONLY</item>
+        <item>READ ONLY</item>
+        <item>READ ONLY</item>
+    </string-array>
+
+    <string-array name="xbee_diagnostics_ranges">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+</resources>

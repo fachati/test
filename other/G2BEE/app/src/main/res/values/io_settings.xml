@@ -1,0 +1,167 @@
+<resources>
+
+    <!-- I/O Settings -->
+    <string-array name="xbee_io_settings_commands">
+        <item>D0</item>
+        <item>D1</item>
+        <item>D2</item>
+        <item>D3</item>
+        <item>D4</item>
+        <item>D5</item>
+        <item>P0</item>
+        <item>P1</item>
+        <item>P2</item>
+        <item>PR</item>
+        <item>LT</item>
+        <item>RP</item>
+        <item>DO</item>
+        <item>IR</item>
+        <item>IC</item>
+        <item>V+</item>
+    </string-array>
+
+    <string-array name="xbee_io_settings_command_names">
+        <item>D0</item>
+        <item>AD0/DIO0 configuration</item>
+        <item>AD1/DIO1 configuration</item>
+        <item>AD2/DIO2 configuration</item>
+        <item>AD3/DIO3 configuration</item>
+        <item>DIO4 configuration</item>
+        <item>DIO5 configuration</item>
+        <item>DIO10 configuration</item>
+        <item>DIO11 configuration</item>
+        <item>DIO12 configuration</item>
+        <item>Pull-up resistor enable</item>
+        <item>Associate LED blink time</item>
+        <item>RSSI PWM timer</item>
+        <item>Device options</item>
+        <item>IO sampling rate</item>
+        <item>Digital IO change detection</item>
+        <item>Supply voltage high threshold</item>
+    </string-array>
+
+    <string-array name="xbee_io_settings_descriptions">
+        <item>Default: 1\n\nConfigure options for the AD0/DIO0 line of the module.\nOptions
+            include :\n - Enabling commissioning button functionality\n - Analog
+            to Digital converter\n - Digital Input and Output
+        </item>
+        <item>Default: 0\n\nConfigure options for the AD1/DIO1 line of the module.\nOptions
+            include :\n - Analog to Digital converter\n - Digital Input and Output
+        </item>
+        <item>Default: 0\n\nConfigure options for the AD2/DIO2 line of the module.\nOptions
+            include :\n - Analog to Digital converter\n - Digital Input and Output
+        </item>
+        <item>Default: 0\n\nConfigure options for the AD3/DIO3 line of the module.\nOptions
+            include :\n - Analog to Digital converter\n - Digital Input and Output
+        </item>
+        <item>Default: 0\n\nConfigure options for the AD4/DIO4 line of the module.\nOptions
+            include :\n - Digital Input and Output
+        </item>
+        <item>Default: 1\n\nConfigure options for the DIO5/Assoc line of the module.\nOptions
+            include :\n - Associated LED indicator (blinkds when associated)\n - Digital
+            Input and Output
+        </item>
+        <item>Default: 1\n\nConfigure options for the DIO10 line of the module.\nOptions
+            include :\n - RSSI PWM Output\n - Digital Input and Output
+        </item>
+        <item>Default: 0\n\nConfigure options for the DIO11 line of the module.\nOptions
+            include :\n - Digital Input and Output
+        </item>
+        <item>Default: 0\n\nConfigure options for the DIO12 line of the module.\nOptions
+            include :\n - Digital Input and Output
+        </item>
+        <item>Range: 0x0 - 0x3FFF (Default: 1FFF)\n\nSet/read bitfield to configure internal
+            pullup resistors status for I/O lines.\n1=internal pullup enabled,
+            0=no internal pullup.\nBitfield map :\n(13)DIO7/CTS (12)DIO11 (11)DIO10/PWM0
+            (10)DIO12\n(9)On/Sleep (8)Associate (7)DIN/Config (6)Sleep_Rq\n(5)RTS (4)AD0/DIO0
+            (3)AD1/DIO1 (2)AD2/DIO2 (1)AD3/DIO3 (0)DIO4
+        </item>
+        <item>Range: 0x0A - 0xFF (Default: 0)\n\nSet/read the Associated LED blink rate.\nThis
+            value determines the blink rate of the Associate/DIO5 pin if D5=1 and the module
+            has started a netwrok.\nSetting LT to 0 will use the default blink time
+            (250ms).
+        </item>
+        <item>Range: 0x0 - 0xFF (Default: 28)\n\nSet/read PWM timer register.\nSet duration
+            of PWM (pulse width modulation) signal output on the RSSI line pin (P6). The signal
+            duty cycle is updated with each received packet or APS acknowledgment and is
+            shut off when the timer expires.
+        </item>
+        <item>Range: 0x0 - 0xFF (Default: 1)\n\nBit0 - Reserved\nBit1 - Reserved\nBit2 - 0/1
+            = First or Best Response\nBit3 - Reserved
+        </item>
+        <item>Range: 0x32 - 0xFFFF (Default: 0)\n\nSet the IO sampling rate to enable
+            periodic sampling.\nIf set > 0, all enabled digital IO and analog inputs
+            will be sampled and transmitted every IR milliseconds. IO Samples are transmitted
+            to the address specified by DH+DL.
+        </item>
+        <item>Range: 0x0 - 0xFFFF (Default: 0)\n\nBitfield that configures which digital IO pins
+            should be monitored for change detection.\nIf a change is detected on
+            an enabled digital IO pin, a digital IO sample is immediately transmitted
+            to the address specified by DH+DL.
+        </item>
+        <item>Range: 0x0 - 0xFFFF (Default: 0)\n\nConfigure the supply voltage high
+            threshold.\nIf the supply voltage measurement equals or drops below
+            this threshold, the supply voltage will be appended to an IO sample transmission.
+            Since the operating Vcc range for the XBee-PRO is 3000-4000 mV,
+            after scaling by 1024/1200, the useful range for this parameter is 0,0x0a00-0x0b55.
+        </item>
+    </string-array>
+
+
+    <string-array name="xbee_io_settings_input_types">
+        <item>SPINNER</item>
+        <item>SPINNER</item>
+        <item>SPINNER</item>
+        <item>SPINNER</item>
+        <item>SPINNER</item>
+        <item>SPINNER</item>
+        <item>SPINNER</item>
+        <item>SPINNER</item>
+        <item>SPINNER</item>
+        <item>SLIDER</item>
+        <item>SLIDER</item>
+        <item>SLIDER</item>
+        <item>SLIDER</item>
+        <item>SLIDER</item>
+        <item>SLIDER</item>
+        <item>SLIDER</item>
+    </string-array>
+
+    <string-array name="xbee_io_settings_ranges">
+        <item>0 - Disabled,1 - Commissioning button,2 - ADC,3 - Digital input,4 - Digital
+            out low,5 - Digital out high
+        </item>
+        <item>0 - Disabled,1 - N/A,2 - ADC,3 - Digital input,4 - Digital
+            out low,5 - Digital out high
+        </item>
+        <item>0 - Disabled,1 - N/A,2 - ADC,3 - Digital input,4 - Digital
+            out low,5 - Digital out high
+        </item>
+        <item>0 - Disabled,1 - N/A,2 - ADC,3 - Digital input,4 - Digital
+            out low,5 - Digital out high
+        </item>
+        <item>0 - Disabled,1 - N/A,2 - N/A,3 - Digital input,4 - Digital
+            out low,5 - Digital out high
+        </item>
+        <item>0 - Disabled,1 - Associated indicator,2 - N/A,3 - Digital input,4 - Digital
+            out low,5 - Digital out high
+        </item>
+        <item>0 - Disabled,1 - RSSI PWM output,2 - N/A,3 - Digital input,4 - Digital
+            out low,5 - Digital out high
+        </item>
+        <item>0 - Disabled,1 - N/A,2 - N/A,3 - Digital input,4 - Digital
+            out low,5 - Digital out high
+        </item>
+        <item>0 - Disabled,1 - N/A,2 - N/A,3 - Digital input,4 - Digital
+            out low,5 - Digital out high
+        </item>
+        <item>0,3FFF,1FFF</item>
+        <item>0,FFFF,FFFF</item>
+        <item>0,FF,28</item>
+        <item>0,FF,1</item>
+        <item>32,FFFF,0</item>
+        <item>0,FFFF,0</item>
+        <item>0,FFFF,0</item>
+    </string-array>
+
+</resources>

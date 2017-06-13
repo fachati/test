@@ -1,0 +1,81 @@
+<resources>
+
+    <string name="title_usb_device">USB device</string>
+    <string name="summary_no_usb_device">No device found</string>
+
+    <string name="title_use_device">Use as XBee device</string>
+    <string name="summary_use_device">Use the USB device as an XBee device.</string>
+    <string name="summary_not_use_device">Not use this USB device as XBee device.</string>
+
+    <string name="default_use_device">true</string>
+
+    <!-- Serial settings -->
+    <string name="title_serial_settings">Serial settings</string>
+    <string name="title_baud_rate">Baud rate</string>
+    <string name="title_data_bits">Data bits</string>
+    <string name="title_stop_bits">Stop bits</string>
+    <string name="title_parity">Parity</string>
+
+    <!-- Baud rate -->
+    <string name="default_baud_rate">9600</string>
+    <string-array name="baud_rate_entries">
+        <item>2400 bit/s</item>
+        <item>4800 bit/s</item>
+        <item>9600 bit/s</item>
+        <item>19200 bit/s</item>
+        <item>38400 bit/s</item>
+        <item>57600 bit/s</item>
+        <item>115200 bit/s</item>
+    </string-array>
+    <string-array name="baud_rate_entry_values">
+        <item>2400</item>
+        <item>4800</item>
+        <item>9600</item>
+        <item>19200</item>
+        <item>38400</item>
+        <item>57600</item>
+        <item>115200</item>
+    </string-array>
+
+    <!-- Data bits -->
+    <string name="default_data_bits">8</string>
+    <string-array name="data_bits_entries">
+        <item>5 bits</item>
+        <item>6 bits</item>
+        <item>7 bits</item>
+        <item>8 bits</item>
+    </string-array>
+    <string-array name="data_bits_entry_values">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
+    <!-- Stop bits -->
+    <string name="default_stop_bits">1</string>
+    <string-array name="stop_bits_entries">
+        <item>1 bit</item>
+        <item>2 bits</item>
+    </string-array>
+    <string-array name="stop_bits_entry_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- Parity -->
+    <string name="default_parity">0</string>
+    <string-array name="parity_entries">
+        <item>No parity</item>
+        <item>Even parity</item>
+        <item>Odd parity</item>
+        <item>Mark parity</item>
+    </string-array>
+    <string-array name="parity_entry_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,79 @@
+<resources>
+
+    <!-- Sleep Modes -->
+    <string-array name="xbee_sleep_modes_commands">
+        <item>SM</item>
+        <item>SN</item>
+        <item>SO</item>
+        <item>SP</item>
+        <item>ST</item>
+        <item>PO</item>
+    </string-array>
+
+    <string-array name="xbee_sleep_modes_command_names">
+        <item>Sleep mode</item>
+        <item>Number of cyclic sleep periods</item>
+        <item>Sleep options</item>
+        <item>Cyclic sleep period</item>
+        <item>Time before sleep</item>
+        <item>Poll rate</item>
+    </string-array>
+
+    <string-array name="xbee_sleep_modes_descriptions">
+        <item>Default: 0\n\nSet/read sleep mode: Pin Hibernate is lowest power,
+            Cyclic Sleep wakes on timer expiration, Cyclic Sleep Pin-Wake wakes
+            on timer expiration or when Sleep_Rq (module pin 9) transitions
+            from a high to a low state. If SM is set to 0, the XBee is a router,
+            otherwise it is an end device.
+        </item>
+        <item>Range: 0x1 - 0xFFFF (Default: 1)\n\nSet/read the number of cyclic
+            sleep periods used to calculate end device poll timeout.\nIf an end device
+            does not send a poll request to its parent coordinator or router within
+            the poll timeout, the end device is removed from the child table.\nThe poll
+            timeout is calculated in milliseconds as (3 × SN × (SP × 10ms)), minimum of 5
+            seconds. i.e. if SN=15, SP=0x64, the timeout is 45 seconds.
+        </item>
+        <item>Range: 0x0 - 0xFF (Default: 0)\n\nSet/read sleep options. Bitfield
+            options include :\n0x02 - Wake for ST time on each cyclic wake
+            (after sleeping for SN sleep periods)\n0x04 - Enable extended cyclic sleep
+            (sleep for entire SN×SP time - possible data loss)\nAll other option bits
+            should be set to 0.
+        </item>
+        <item>Range: 0x20 - 0xAF0 (Default: 20)\n\nSet/read Cyclic sleep period for
+            cyclic sleeping remotes.\nSet SP on parent (Coordinator or Router)
+            to match the largest SP of its end device children.\nOn a router or coordinator,
+            SP determines the transmission timeout when sending to a sleeping end device. SP also
+            determines how long the parent will buffer a message for a sleeping child.
+        </item>
+        <item>Range: 0x1 - 0xFFFE (Default: 1388)\n\nSet/read time period of inactivity
+            (no serial or RF data is sent or received) before activating Sleep Mode.
+            The ST parameter is used only with Cyclic Sleep settings (SM=4-5).
+        </item>
+        <item>Range: 0x0 - 0x3E8 (Default: 0)\n\nSet/read the poll rate in 10 msec units
+            when set as a sleepy end device.\nSetting this to 0 (default) enables polling
+            at 100ms (default rate). Adaptive polling may allow the end device
+            to poll more rapidly for a short time when receiving RF data.
+        </item>
+    </string-array>
+
+    <string-array name="xbee_sleep_modes_input_types">
+        <item>SPINNER</item>
+        <item>SLIDER</item>
+        <item>SLIDER</item>
+        <item>SLIDER</item>
+        <item>SLIDER</item>
+        <item>SLIDER</item>
+    </string-array>
+
+    <string-array name="xbee_sleep_modes_ranges">
+        <item>0 - No sleep (router),1 - PIN Hibernate,2 - Reserved,3 -
+            Reserved,4 - Cyclic sleep,5 - Cyclic sleep PIN-Wake
+        </item>
+        <item>0,FF,0</item>
+        <item>0,FF,0</item>
+        <item>20,AF0,20</item>
+        <item>1,FFFE,1388</item>
+        <item>3,3E8,0</item>
+    </string-array>
+
+</resources>

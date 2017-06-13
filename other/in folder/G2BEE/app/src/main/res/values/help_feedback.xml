@@ -1,0 +1,65 @@
+<resources>
+
+    <!-- XBee nodes -->
+    <string name="xbee_nodes">XBee nodes</string>
+    <string name="what_is_xbee">What is XBee ?</string>
+    <string name="what_is_xbee_1">XBee is a wireless communication module that <a
+        href="http://www.digi.com/products/wireless/zigbee-mesh/">Digi</a> built to the
+        802.15.4/ZigBee standard. The ZigBee wireless standard can form self-healing mesh
+        networks. </string>
+    <string name="what_is_xbee_2">Source: <a
+        href="http://www.opencircuits.com/Xbee_wireless_module">
+        http://www.opencircuits.com/Xbee_wireless_module</a></string>
+
+    <string name="mesh_network">ZigBee mesh network</string>
+    <string name="mesh_network_1">ZigBee is a standard for low-power, short range wireless devices
+        based on an IEEE 802 standard for personal area networks (PAN).</string>
+    <string name="mesh_network_2">A ZigBee network consist of three different types of ZigBee
+        devices: coordinator, router, end-device. Each network has a 16bit PAN ID. All devices
+        in a ZigBee network is assigned a single PAN ID.</string>
+
+    <string name="mesh_network_3">\u2022\u00A0\u00A0\u00A0ZigBee Coordinator (ZC):</string>
+    <string name="mesh_network_4">The most capable device, the coordinator forms the root of the
+        network tree and might bridge to other networks. There must be one ZigBee coordinator in
+        each network since it is the device that starts the net work originally.</string>
+    <string name="mesh_network_5">The coordinator initiates a Personal Area Network (PAN) by
+        selecting a RF channel and PAN ID. ZC also allows routers and end-devices to join the
+        PAN. It is able to store information about the network, including acting as the Trust
+        Center &amp; repository for security keys.</string>
+
+    <string name="mesh_network_6">\u2022\u00A0\u00A0\u00A0ZigBee Router (ZR):</string>
+    <string name="mesh_network_7">As well as running an application function, a router can act as
+        an intermediate router, passing on data from other devices. A router can start operation
+        only when it has establishes connection with ZC.</string>
+
+    <string name="mesh_network_8">\u2022\u00A0\u00A0\u00A0ZigBee End Device (ZED):</string>
+    <string name="mesh_network_9">Contains just enough functionality to talk to the parent node
+        (either the coordinator or a router); it cannot relay data from other devices.
+        This relationship allows the node to be asleep a significant amount of the time thereby
+        giving long battery life.</string>
+    <string name="mesh_network_10">A ZED must join PAN like a router before sending any senor
+        data. A ZED requires the least amount of memory, and therefore can be less expensive to
+        manufacture than a ZR or ZC.</string>
+
+    <string name="device_addressing">Device addressing</string>
+    <string name="device_addressing_1">When a device connects to a ZigBee network it gets a 16-bit
+        Network address.</string>
+    <string name="device_addressing_2">Each device(node) has a 64-Bit Device address. In XBee ZB
+        modules, this 64-bit address is a unique permanent number assigned by the manufacturer.
+        This is also the serial number of the device. Any data sent from one ZigBee device to
+        another is sent by specifying the 16-bit Network Address and the 64-bit Device Address.
+    </string>
+    <string name="device_addressing_3">Source: <a
+        href="http://www.seeedstudio.com/wiki/Zigbee_Networking_with_XBee_Series_2_and_Seeed's_Products">
+        http://www.seeedstudio.com/wiki/Zigbee_Networking_with_XBee_Series_2_and_Seeed
+        \'s_Products</a></string>
+
+    <!-- Node discovery-->
+    <string name="node_discovery">Node discovery</string>
+    <string name="how_to_discover">How to discover</string>
+    <string name="how_to_discover_1">The node discovery allows to discover the XBee nodes
+        present in the local XBee node\'s PAN.</string>
+    <string name="how_to_discover_2">To do this, go to [icon] XBee nodes window and click the
+        [fab] button.</string>
+
+</resources>

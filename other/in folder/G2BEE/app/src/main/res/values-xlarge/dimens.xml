@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Recycler view -->
+    <dimen name="recycler_view_margin">176dp</dimen>
+
+    <!-- Floating action button -->
+    <dimen name="fab_end_margin">32dp</dimen>
+    <dimen name="fab_bottom_margin">32dp</dimen>
+
+    <!-- List item-->
+    <dimen name="item_padding">192dp</dimen>
+
+    <!-- Card -->
+    <dimen name="card_edge_padding_vertical">8dp</dimen>
+    <dimen name="card_edge_padding_horizontal">176dp</dimen>
+
+</resources>

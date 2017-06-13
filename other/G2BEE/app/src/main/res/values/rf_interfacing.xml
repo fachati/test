@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- RF Interfacing -->
+    <string-array name="xbee_rf_interfacing_commands">
+        <item>PL</item>
+        <item>PM</item>
+        <item>PP</item>
+    </string-array>
+
+    <string-array name="xbee_rf_interfacing_command_names">
+        <item>Power level</item>
+        <item>Power mode</item>
+        <item>Power at PL4</item>
+    </string-array>
+
+    <string-array name="xbee_rf_interfacing_descriptions">
+        <item>Default: 4\n\nSelect/Read transmitter output power. Power levels relative
+            to PP:\n0 = -8dB\n1 = -6dB\n2 = -4dB\n3 = -2dB\n4 = 0dB
+        </item>
+        <item>Default: 1\n\nSelect/Read module boost mode setting.\nIf enabled, boost mode
+            improves sensitivity by 1dB and increases output power by 2dB, improving the link
+            margin and range.
+        </item>
+        <item>Read-only parameter.\n\nRead dBm output when PL4 is selected.</item>
+    </string-array>
+
+    <string-array name="xbee_rf_interfacing_input_types">
+        <item>SPINNER</item>
+        <item>SPINNER</item>
+        <item>READ ONLY</item>
+    </string-array>
+
+    <string-array name="xbee_rf_interfacing_ranges">
+        <item>0 - Lowest,1 - Low,2 - Medium,3 - High,4 - Highest</item>
+        <item>0 - Boost mode disabled,1 - Boost mode enabled</item>
+        <item></item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.g2mobility/g2bee-api/3.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="d235a0afe6b98f732e1879a720510f33a97c71b8">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/com.g2mobility-g2bee-api-3.0.0_2f47b368794040424cb9d169db235369ee4dc38a.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="82ce13fd19cdfde0e392f03c27edeba8d4333648">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-23.3.0_649f6e9387148c7c37f01d72342aa378b9de9ef2.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/library-2.4.0_4ae351d4e035818b4b69a3d4c3f08f54599b0bb6.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.3.0_062e61197a98cf6b83a593cede2321b1ce7bf8df.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/me.zhanghai.android.materialprogressbar/library/1.1.5/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="4a9f97c742d058ca55948643c06f447895a9af76">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/me.zhanghai.android.materialprogressbar-library-1.1.5_c5c2cc5c635f88732c3c6a8d2928c61c3ea46dcb.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.hoho.android/usb-serial-for-android/0.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="f2a2ecd9616aa6d6ef5defbf81e4e9ea3033a6c3">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/com.hoho.android-usb-serial-for-android-0.2.0_0594d37118edc710116263153059d63b697dabb3.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.rengwuxian.materialedittext/library/2.1.4/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="288913b440a3c61c30aa171095453a605432277a">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/com.rengwuxian.materialedittext-library-2.1.4_9fac81bf480b2d9420dcb82908f97ac2a172dc59.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.3.0_574ac93de233025c6974dbf43b5076cd6b3180ff.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.hoho.android/usb-serial-for-android/0.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="f2a2ecd9616aa6d6ef5defbf81e4e9ea3033a6c3">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/com.hoho.android-usb-serial-for-android-0.2.0_0594d37118edc710116263153059d63b697dabb3.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.rengwuxian.materialedittext/library/2.1.4/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="288913b440a3c61c30aa171095453a605432277a">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/com.rengwuxian.materialedittext-library-2.1.4_9fac81bf480b2d9420dcb82908f97ac2a172dc59.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/android-sdk/extras/android/m2repository/com/android/support/support-annotations/23.3.0/support-annotations-23.3.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/support-annotations-23.3.0_ffed5a0306272fbf41c382774d37b9315ebc3b8c.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.3.0_1f9e91b22818c48cd2bdc93df873b854cb7fa0e9.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/library-2.4.0_4ae351d4e035818b4b69a3d4c3f08f54599b0bb6.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.github.afollestad.material-dialogs/core/0.8.5.7/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="a94e3ac390a37f149a235f7f5e1b49b65151c0bf">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/com.github.afollestad.material-dialogs-core-0.8.5.7_e50536c0402de3bcc4cc72a438ef5cc3dbce6aa9.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.3.0_6cca3532c995655a9e6937aec16fe93177291a34.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.3.0_8e4432200e5edfe28370a720537cb86afe9744d0.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/internal_impl-23.3.0_0089a8f91327d95452aca524953295119fad7282.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.g2mobility/g2bee-api/3.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d235a0afe6b98f732e1879a720510f33a97c71b8">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/com.g2mobility-g2bee-api-3.0.0_2f47b368794040424cb9d169db235369ee4dc38a.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/.gradle/caches/modules-2/files-2.1/com.digi.xbee/xbjlib/1.1.0/ac756754604942363e863e9a76f9eff788f30202/xbjlib-1.1.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="ac756754604942363e863e9a76f9eff788f30202">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/xbjlib-1.1.0_76ed6b5be3cd339ad97165e7add396e44fa88662.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/.gradle/caches/modules-2/files-2.1/com.digi.xbee/xbjlib/1.1.0/ac756754604942363e863e9a76f9eff788f30202/xbjlib-1.1.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ac756754604942363e863e9a76f9eff788f30202">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/xbjlib-1.1.0_76ed6b5be3cd339ad97165e7add396e44fa88662.jar" />
+    </item>
+    <item
+        jar="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="/home/g2mobility/jenkins/jobs/g2bee-release/workspace/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.3.0_c9516194493900709e8634fded8179b786911e21.jar" />
+    </item>
+
+</items>

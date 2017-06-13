@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="g2bee-api-3.0.0">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.g2mobility/g2bee-api/3.0.0/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.g2mobility/g2bee-api/3.0.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.g2mobility/g2bee-api/3.0.0/756159ad6d7300d47effbfb97d520f4291c608b9/g2bee-api-3.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,72 @@
+<resources>
+
+    <!-- Serial Interfacing -->
+    <string-array name="xbee_serial_interfacing_commands">
+        <item>BD</item>
+        <item>NB</item>
+        <item>SB</item>
+        <item>D7</item>
+        <item>D6</item>
+        <item>AP</item>
+        <item>AO</item>
+    </string-array>
+
+    <string-array name="xbee_serial_interfacing_command_names">
+        <item>Baud rate</item>
+        <item>Parity</item>
+        <item>Stop bits</item>
+        <item>DIO7 configuration</item>
+        <item>DIO6 configuration</item>
+        <item>API enable</item>
+        <item>API output mode</item>
+    </string-array>
+
+    <string-array name="xbee_serial_interfacing_descriptions">
+        <item>Default: 3\n\nSet/read the serial interface baud rate for communication between
+            modem serial port and host.\nRequest non-standard baud rates above 0x12C
+            using a terminal window. Read BD register to find actual baud rate achieved.
+        </item>
+        <item>Default: 0\n\nConfigure parity for the UART.</item>
+        <item>Default: 0\n\nConfigure the number of stop bits for the UART.\nThis setting is
+            only valid for no parity, even parity, or odd parity.
+        </item>
+        <item>Default: 1\n\nConfigure options for the DIO7 line of the module.\nOptions include:
+            CTS flow control, Digital Input and Output, or RS-485 enable control.
+        </item>
+        <item>Default: 0\n\nConfigure options for the DIO6 line of the module.\nOptions include:
+            RTS flow control, and Digital Input and Output.
+        </item>
+        <item>Range: 0x1 - 0x2 (Default: 1)\n\nEnables API mode.</item>
+        <item>Default: 0\n\nSet the API output mode register value.\n0 - Received Data formatted
+            as native API frame format\n1 - Received RF data formatted as Explicit
+            Rx-Indicator\n3 - Same as 1, plus received ZDO requests are passed out the UART
+        </item>
+    </string-array>
+
+    <string-array name="xbee_serial_interfacing_input_types">
+        <item>SPINNER</item>
+        <item>SPINNER</item>
+        <item>SPINNER</item>
+        <item>SPINNER</item>
+        <item>SPINNER</item>
+        <item>SPINNER</item>
+        <item>SPINNER</item>
+    </string-array>
+
+    <string-array name="xbee_serial_interfacing_ranges">
+        <item>0 - 1200,1 - 2400,2 - 4800,3
+            - 9600,4 - 19200,5 - 38400,6 - 57600,7 - 115200
+        </item>
+        <item>0 - No parity,1 - Even parity,2 - Odd parity,3 - Mark parity</item>
+        <item>0 - One stop bit,1 - Two stop bits</item>
+        <item>0 - Disable,1 - CTS flow control,2 - N/A,3 - Digital input,4 - Digital
+            out low,5 - Digital out high,6 - RS-485 enable low,7 - RS-485 enable high
+        </item>
+        <item>0 - Disable,1 - RTS flow control,2 - N/A,3 - Digital input,4 - Digital
+            out low,5 - Digital out high
+        </item>
+        <item>1 - Enabled,2 - Disabled</item>
+        <item>0 - Native,1 - Explicit,2 - Reserved,3 - Explicit with ZDO pass-through</item>
+    </string-array>
+
+</resources>

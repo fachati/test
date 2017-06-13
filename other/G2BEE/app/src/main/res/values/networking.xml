@@ -1,0 +1,104 @@
+<resources>
+
+    <!-- Networking -->
+    <string-array name="xbee_networking_commands">
+        <item>ID</item>
+        <item>SC</item>
+        <item>SD</item>
+        <item>ZS</item>
+        <item>NJ</item>
+        <item>NW</item>
+        <item>JV</item>
+        <item>JN</item>
+        <item>OP</item>
+        <item>OI</item>
+        <item>CH</item>
+        <item>NC</item>
+    </string-array>
+
+    <string-array name="xbee_networking_command_names">
+        <item>PAN ID</item>
+        <item>Scan channels</item>
+        <item>Scan duration</item>
+        <item>ZigBee stack profile</item>
+        <item>Node join time</item>
+        <item>Network watchdog timeout</item>
+        <item>Channel verification</item>
+        <item>Join notification</item>
+        <item>Operating PAN ID</item>
+        <item>Operating 16-bit PAN ID</item>
+        <item>Operating channel</item>
+        <item>Number of remaining children</item>
+    </string-array>
+
+    <string-array name="xbee_networking_descriptions">
+        <item>Range: 0x0 - 0xFFFFFFFFFFFFFFFF (Default: 0)\n\nSet the PAN (Personal Area Network) 
+            ID for the network (ZigBee extended PAN ID).\nValid range is 
+            0 - 0xFFFFFFFFFFFFFFFF.\nAlternatively, set ID=0 (default) for the coordinator 
+            to choose a random Pan ID.</item>
+        <item>Range: 0x1 - 0x7FFF (Default: 3FFF)\n\nSet/read list of channels to scan
+            (active and energy scans) when forming a PAN as bitfield.\nScans are initiated during 
+            coordinator startup: Bit 15 = Chan 0x1A… Bit0 = Chan 0x0B</item>
+        <item>Range: 0x0 - 0x07 (Default: 3)\n\nSet/read the Scan Duration exponent.\nThe exponent 
+            configures the duration of the active scan and energy scan during coordinator 
+            initialization.\nScan Time = SC × (2 ^ SD) × 15.36ms. (SC=# channels)</item>
+        <item>Range: 0x0 - 0x2 (Default: 0)\n\nSet/read the ZigBee stack profile setting.\n0 = Network 
+            Specific\n1 = ZigBee-2006\n2 = ZigBee-PRO</item>
+        <item>Range: 0x0 - 0xFF (Default: FF)\n\nSet/read the Node Join time.\nThe value of NJ 
+            determines the time (in seconds) that the device will allow other devices to join to it.
+            If set to 0xFF, the device will always allow joining.</item>
+        <item>Range: 0x0 - 0x64FF (Default: 0)\n\nSet/read the network watchdog timeout.\nIf 
+            set to a non-zero value, the network watchdog timer is enabled on a router. The router 
+            will leave the network if is does not receive valid communication within (3 × NW) minutes. 
+            The timer is reset each time data is received from or sent to a coordinator, or 
+            if a many-to-one broadcast is received.</item>
+        <item>Default: 0\n\nSet/read the channel verification setting.\nIf enabled, 
+            a router will verify a coordinator exists on the same channel 
+            after joining or power cycling to ensure it is operating on a valid channel, 
+            and will leave if a coordinator cannot be found (if NJ=0xFF). If disabled, 
+            the router will remain on the same cahnnel through power cycles.</item>
+        <item>Default: 0\n\nSet/read the join notification setting.\nIf enabled, 
+            the module will transmit a broadcast node identification frame 
+            on power up and when joining. This action blinks the Assoc LED rapidly 
+            on all devices that receive the data, and sends an API frame out the UART 
+            of API devices. This function should be disabled for large newworks.</item>
+        <item>Read-only parameter.\n\nRead the operating PAN ID (ZigBee extended PAN ID).</item>
+        <item>Read-only parameter.\n\nRead the 16-bit operating PAN ID.</item>
+        <item>Read-only parameter.\n\nRead the operating channel number (Uses 802.15.4 channel
+            numbers).</item>
+        <item>Read-only parameter.\n\nRead the number of remaining end device children that
+            can join this device..\nIf NC=0, the device cannot allow any more end device children
+            to join.</item>
+    </string-array>
+
+    <string-array name="xbee_networking_input_types">
+        <item>EDIT TEXT</item>
+        <item>SLIDER</item>
+        <item>SLIDER</item>
+        <item>SPINNER</item>
+        <item>SLIDER</item>
+        <item>SLIDER</item>
+        <item>SPINNER</item>
+        <item>SPINNER</item>
+        <item>READ ONLY</item>
+        <item>READ ONLY</item>
+        <item>READ ONLY</item>
+        <item>READ ONLY</item>
+    </string-array>
+
+    <string-array name="xbee_networking_ranges">
+        <item></item>
+        <item>1,7FFF,3FFF</item>
+        <item>0,7,3</item>
+        <item>0 - Network specific,1 - ZigBee-2006,2 - ZigBee-PRO</item>
+        <item>0,FF,FF</item>
+        <item>0,64FF,0</item>
+        <item>0 - Disabled,1 - Enabled</item>
+        <item>0 - Disabled,1 - Enabled</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+</resources>
